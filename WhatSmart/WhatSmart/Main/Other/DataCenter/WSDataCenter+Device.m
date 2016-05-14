@@ -14,7 +14,7 @@
 
 - (void)GetDeviceList
 {
-    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:@"http://192.168.1.1/jsonrpc/1.0/device"]];
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:[WSURL DeviceList]]];
     [client.requestSerializer setValue:[WSDataCenter shareDataCenter].currentUser.token forHTTPHeaderField:@"auth-token"];
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     
@@ -44,7 +44,7 @@
 
 - (void) GetDeviceWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess, DeviceModel *model))completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/device/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL DeviceWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"请求设备信息......");
     [client invokeMethod:@"get_device" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -64,7 +64,7 @@
 
 - (void) SetNameWithId:(NSString*) Id andName:(NSString*) name Completion:(void(^)(BOOL isSuccess, NSError * error)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/device/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL DeviceWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"设置设备名字......");
     [client invokeMethod:@"set_name" withParameters:@{@"name":name} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -77,7 +77,7 @@
 
 - (void) SetPositionWithId:(NSString*) Id andPosition:(NSString*) position Completion:(void(^)(BOOL isSuccess, NSError * error)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/device/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL DeviceWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"设置设备位置......");
     [client invokeMethod:@"set_position" withParameters:@{@"position":position} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -90,7 +90,7 @@
 
 - (void) PowerOnWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess, NSError * error)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"打开设备......");
     [client invokeMethod:@"power_on" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -103,7 +103,7 @@
 
 - (void) PowerOffWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess, NSError * error)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"关闭设备......");
     [client invokeMethod:@"power_off" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -116,7 +116,7 @@
 
 - (void) GetPowerStateWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess, id response)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"获取设备电量......");
     [client invokeMethod:@"get_power_state" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -135,7 +135,7 @@
 
 - (void) SetBrightnessWithId:(NSString*) Id andBrightness:(NSNumber*) brighness Completion:(void(^)(BOOL isSuccess,NSError * error)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"设置亮度......");
     [client invokeMethod:@"set_brightness" withParameters:@{@"brightness":brighness} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -149,7 +149,7 @@
 
 - (void) GetBrightnessWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess, id response)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"获取亮度......");
     [client invokeMethod:@"get_brightness" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -168,7 +168,7 @@
 
 - (void) SetColorWithId:(NSString*) Id andColor:(NSNumber*) color Completion:(void(^)(BOOL isSuccess,NSError * error)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"设置颜色......");
     [client invokeMethod:@"set_color" withParameters:@{@"color":color} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -182,7 +182,7 @@
 
 - (void) GetColorWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess,  NSNumber* color)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"获取颜色......");
     [client invokeMethod:@"get_color" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -201,7 +201,7 @@
 
 - (void) SendMessageWithId:(NSString *) Id andType:(NSString*) type andEncode:(NSString*) encode andContent:(NSString*) content Completion:(void(^)(BOOL isSuccess, NSError* error)) completion
 {
-    NSString * urlString = [[NSString alloc] initWithFormat:@"http://192.168.1.1/jsonrpc/1.0/control/%@",Id ];
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     DLog(@"发送消息：%@......",content);
     [client invokeMethod:@"send_message" withParameters:@{@"type":type,@"encode":encode,@"content":content} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {

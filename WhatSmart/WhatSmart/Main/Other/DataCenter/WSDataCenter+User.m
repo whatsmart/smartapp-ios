@@ -12,7 +12,7 @@
 
 -(void) RegisterUserWithName:(NSString*) name andPassword:(NSString*) password  Completion:(void(^)(BOOL isSuccess, NSError* error)) completion
 {
-    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:@"http://192.168.1.1/jsonrpc/1.0/user"]];
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:[WSURL UserUrl]]];
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     
     DLog(@"注册用户......");
@@ -26,7 +26,7 @@
 
 - (void) DeleteUserWithId:(NSString*) Id Completion:(void(^) (BOOL isSuccess, NSError* error)) completion
 {
-    NSString * urlString = [NSString stringWithFormat:@"http://192.168.1.1/jsonrpc/1.0/user/%@",Id];
+    NSString * urlString = [NSString stringWithFormat:[WSURL UserWithId],Id];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     [client.requestSerializer setValue:[WSDataCenter shareDataCenter].currentUser.token forHTTPHeaderField:@"auth-token"];
@@ -42,7 +42,7 @@
 
 - (void) UpdateUserWithId:(NSString*) Id andName:(NSString*) name andPassword:(NSString*) password Completion:(void(^) (BOOL isSuccess, NSError* error)) completion
 {
-    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:@"http://192.168.1.1/jsonrpc/1.0/user"]];
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:[WSURL UserUrl]]];
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     [client.requestSerializer setValue:[WSDataCenter shareDataCenter].currentUser.token forHTTPHeaderField:@"auth-token"];
 
@@ -57,7 +57,7 @@
 }
 - (void) GetUserWithId:(NSString*) Id Completion:(void(^) (BOOL isSuccess, UserModel* model)) completion
 {
-    NSString * urlString = [NSString stringWithFormat:@"http://192.168.1.1/jsonrpc/1.0/user/%@",Id];
+    NSString * urlString = [NSString stringWithFormat:[WSURL UserWithId],Id];
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     [client.requestSerializer setValue:[WSDataCenter shareDataCenter].currentUser.token forHTTPHeaderField:@"auth-token"];
@@ -76,7 +76,7 @@
 }
 - (void) GetUserList:(void(^) (BOOL isSuccess, UserModel* model)) completion
 {
-    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:@"http://192.168.1.1/jsonrpc/1.0/user"]];
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:[WSURL UserUrl]]];
     [client.requestSerializer setValue:[WSDataCenter shareDataCenter].currentUser.token forHTTPHeaderField:@"auth-token"];
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     

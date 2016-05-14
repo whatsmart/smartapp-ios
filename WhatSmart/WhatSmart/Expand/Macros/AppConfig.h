@@ -12,7 +12,7 @@
 /**
  *  宏和字符串之间有且只能有一个空格！！！！！！！！！千万不要随便修改！！！！！！
  */
-#define KWSAPIHOSTURL @"http://192.168.1.1/jsonrpc/1.0/"
+#define KWSAPIHOSTURL @"http://121.42.156.167/jsonrpc/1.0/"
 
 
 #endif /* AppConfig_h */

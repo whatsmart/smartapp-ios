@@ -11,5 +11,10 @@
 @interface WSURL : NSObject
 
 + (NSString*) DeviceList;
++ (NSString*) DeviceWithId;
++ (NSString*) ControlWithId;
+
++ (NSString*) UserUrl;
++ (NSString*) UserWithId;
 
 @end

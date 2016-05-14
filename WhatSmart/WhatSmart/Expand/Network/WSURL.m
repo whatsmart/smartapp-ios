@@ -13,5 +13,11 @@
 
 #warning 请求设备列表
 + (NSString*) DeviceList{return  kAPI(@"device"); }
++ (NSString*) DeviceWithId{return  kAPI(@"device/%@");}
++ (NSString*) ControlWithId{return kAPI(@"control/%@");}
+
++ (NSString*) UserUrl{return kAPI(@"user");}
++ (NSString*) UserWithId{return kAPI(@"user/%@");}
+
 
 @end

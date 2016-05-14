@@ -12,7 +12,7 @@
 #import "UIButton+Block.h"
 
 @interface DeviceViewController ()
-@property (nonatomic,strong) WSTableView * TableView;
+@property (nonatomic,strong) WSTableView * tableView;
 //@property (weak, nonatomic) UIButton *reloadDataButton;
 
 @property (nonatomic,strong) NSMutableArray * dataSource;
@@ -22,17 +22,13 @@
 
 @implementation DeviceViewController
 
-@synthesize TableView;
-@synthesize dataSource;
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupView];
-    
-    if ([WSDataCenter shareDataCenter].DeviceArray) {
+    [self setupNotifications];
+
+    if ([WSDataCenter shareDataCenter].DeviceArray.count > 0) {
         [self updateDeviceData];
     }else{
         [[WSDataCenter shareDataCenter] GetDeviceList];
@@ -44,6 +40,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)dealloc
+{
+    [self removeNotification];
+}
 
 -(void)updateDeviceData
 {
@@ -53,13 +53,14 @@
     @synchronized (self.dataSource) {
         self.dataSource = [WSDataCenter shareDataCenter].DeviceArray;
     }
-    [self.TableView reloadData];
+    [self.tableView reloadData];
 }
 #pragma mark 初始化view
 - (void) setupView
 {
-    [self.TableView addRefreshHeaderAndFooterTarget:self HeaderAction:@selector(headerAction) FooterAction:@selector(footerAction)];
-    [self.view addSubview:self.TableView];
+    
+    [self.tableView addRefreshHeaderAndFooterTarget:self HeaderAction:@selector(headerAction) FooterAction:@selector(footerAction)];
+    [self.view addSubview:self.tableView];
     
 //    //重新加载按钮
 //    UIButton *reloadDataButton = [[UIButton alloc] init];
@@ -91,13 +92,11 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self setupNotifications];
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self removeNotification];
 }
 -(void) setupNotifications
 {
@@ -110,6 +109,7 @@
 #pragma mark 通知处理
 -(void)get_notification:(NSNotification*) notification
 {
+    [self.tableView.mj_header endRefreshing ];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     if ([notification.userInfo[@"status"] isEqual:@YES]) {
         [self updateDeviceData];
@@ -117,21 +117,22 @@
 }
 
 #pragma mark set
--(WSTableView *)TableView
+-(WSTableView *)tableView
 {
-    if (TableView == nil) {
-        TableView = [[WSTableView alloc] initWithFrame:kScreenFrame];
-        [TableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    if (_tableView == nil) {
+        _tableView = [[WSTableView alloc] initWithFrame:kScreenFrame];
+        [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+        _tableView.owner = self;
     }
-    return TableView;
+    return _tableView;
 }
 
 -(NSMutableArray *)dataSource
 {
-    if (dataSource == nil) {
-        dataSource = [NSMutableArray new];
+    if (_dataSource == nil) {
+        _dataSource = [NSMutableArray new];
     }
-    return dataSource;
+    return _dataSource;
 }
 
 @end

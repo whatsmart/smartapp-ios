@@ -173,8 +173,8 @@
 		9D90EF651CA2964C00D79769 /* my@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my@2x.png"; sourceTree = "<group>"; };
 		9D90EF671CA2A1DE00D79769 /* WSTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTableView.h; sourceTree = "<group>"; };
 		9D90EF681CA2A1DE00D79769 /* WSTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTableView.m; sourceTree = "<group>"; };
-		9D90EF6A1CA2A40D00D79769 /* WSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSURL.h; sourceTree = "<group>"; };
-		9D90EF6B1CA2A40D00D79769 /* WSURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSURL.m; sourceTree = "<group>"; };
+		9D90EF6A1CA2A40D00D79769 /* WSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSURL.h; path = ../../../Expand/Network/WSURL.h; sourceTree = "<group>"; };
+		9D90EF6B1CA2A40D00D79769 /* WSURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSURL.m; path = ../../../Expand/Network/WSURL.m; sourceTree = "<group>"; };
 		9D90EF6D1CA2A47100D79769 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		9D90EF6E1CA2A6A900D79769 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		9D90EF751CA2A81000D79769 /* WSDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSDeviceTableViewCell.h; path = View/WSDeviceTableViewCell.h; sourceTree = "<group>"; };
@@ -236,6 +236,8 @@
 				9D2489981CC50ECE005DB5E7 /* WSDataCenter+Device.m */,
 				9D2489991CC50ECE005DB5E7 /* WSDataCenter+User.m */,
 				FE5F37241CC6041A003A6188 /* WSDataCenter+BaseData.m */,
+				9D90EF6A1CA2A40D00D79769 /* WSURL.h */,
+				9D90EF6B1CA2A40D00D79769 /* WSURL.m */,
 			);
 			name = DataCenter;
 			path = Main/Other/DataCenter;
@@ -385,6 +387,7 @@
 				9D90EF0B1CA28BC400D79769 /* Main */,
 				9D90EF291CA28BDB00D79769 /* Expand */,
 				9D90EF301CA28BE600D79769 /* Resource */,
+				9D90EF2D1CA28BDB00D79769 /* Macros */,
 				9D90EF261CA28BD000D79769 /* Vender */,
 				9D90EF001CA287B100D79769 /* Assets.xcassets */,
 				9D90EF021CA287B100D79769 /* LaunchScreen.storyboard */,
@@ -655,7 +658,6 @@
 				9D86E0B31CC350DB00342202 /* Error */,
 				9D90EF2B1CA28BDB00D79769 /* Const */,
 				9D90EF2C1CA28BDB00D79769 /* DataBase */,
-				9D90EF2D1CA28BDB00D79769 /* Macros */,
 				9D90EF2E1CA28BDB00D79769 /* Network */,
 				9D90EF2F1CA28BDB00D79769 /* Tool */,
 			);
@@ -697,14 +699,13 @@
 				9D90EF581CA2919100D79769 /* Title.h */,
 				9D90EF6D1CA2A47100D79769 /* AppConfig.h */,
 			);
-			path = Macros;
+			name = Macros;
+			path = Expand/Macros;
 			sourceTree = "<group>";
 		};
 		9D90EF2E1CA28BDB00D79769 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9D90EF6A1CA2A40D00D79769 /* WSURL.h */,
-				9D90EF6B1CA2A40D00D79769 /* WSURL.m */,
 				9D86E0AA1CC332F300342202 /* WSNetworkManager.h */,
 				9D86E0AB1CC332F300342202 /* WSNetworkManager.m */,
 				9D86E0B11CC3356E00342202 /* WSNetworkManager+Device.m */,
