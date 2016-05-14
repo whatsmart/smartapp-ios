@@ -1,0 +1,52 @@
+PODS:
+  - AFJSONRPCClient (2.1.1):
+    - AFNetworking (~> 2.1)
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Masonry (0.6.2)
+  - MBProgressHUD (0.9.1)
+  - MBProgressHUDExtensions (0.0.1):
+    - MBProgressHUD (~> 0.4)
+  - pop (1.0.7)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+
+DEPENDENCIES:
+  - AFJSONRPCClient (~> 2.1.1)
+  - AFNetworking (= 2.5.1)
+  - Masonry (= 0.6.2)
+  - MBProgressHUD (= 0.9.1)
+  - MBProgressHUDExtensions (= 0.0.1)
+  - pop (= 1.0.7)
+  - SDWebImage (= 3.7.1)
+
+SPEC CHECKSUMS:
+  AFJSONRPCClient: 333bada91e6e45398446b8bd84e238e6f2389b1b
+  AFNetworking: 10e85a00bb0f475124e4ff2677bf15693b2c1523
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MBProgressHUDExtensions: f39a37dcc0bf6c7622470c5f5874116ef86ca22e
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
+
+COCOAPODS: 0.39.0
