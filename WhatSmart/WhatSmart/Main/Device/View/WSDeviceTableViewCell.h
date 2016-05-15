@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WSDeviceCellModel.h"
+#import "DeviceModel.h"
 
 @interface WSDeviceTableViewCell : UITableViewCell
-@property (nonatomic,strong) WSDeviceCellModel * model;
+@property (nonatomic,strong) DeviceModel * model;
 - (CGFloat )height;
 @end

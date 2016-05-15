@@ -63,6 +63,8 @@
 		9D90EF691CA2A1DE00D79769 /* WSTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF681CA2A1DE00D79769 /* WSTableView.m */; };
 		9D90EF6C1CA2A40D00D79769 /* WSURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF6B1CA2A40D00D79769 /* WSURL.m */; };
 		9D90EF771CA2A81000D79769 /* WSDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF761CA2A81000D79769 /* WSDeviceTableViewCell.m */; };
+		9D91FC4A1CE8155B00D9798D /* device_lighting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D91FC491CE8155B00D9798D /* device_lighting@2x.png */; };
+		9D91FC4E1CE8163700D9798D /* WSToolsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D91FC4D1CE8163700D9798D /* WSToolsObject.m */; };
 		FE5F37251CC6041A003A6188 /* WSDataCenter+BaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F37241CC6041A003A6188 /* WSDataCenter+BaseData.m */; };
 		FE5F37281CC607CE003A6188 /* DeviceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F37271CC607CE003A6188 /* DeviceTableView.m */; };
 		FE5F37381CC61CBD003A6188 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F37371CC61CBD003A6188 /* UIViewAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -179,6 +181,9 @@
 		9D90EF6E1CA2A6A900D79769 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		9D90EF751CA2A81000D79769 /* WSDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSDeviceTableViewCell.h; path = View/WSDeviceTableViewCell.h; sourceTree = "<group>"; };
 		9D90EF761CA2A81000D79769 /* WSDeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSDeviceTableViewCell.m; path = View/WSDeviceTableViewCell.m; sourceTree = "<group>"; };
+		9D91FC491CE8155B00D9798D /* device_lighting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_lighting@2x.png"; sourceTree = "<group>"; };
+		9D91FC4C1CE8163700D9798D /* WSToolsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSToolsObject.h; sourceTree = "<group>"; };
+		9D91FC4D1CE8163700D9798D /* WSToolsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSToolsObject.m; sourceTree = "<group>"; };
 		D83F557E91E2400EF8B671C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FE5F37241CC6041A003A6188 /* WSDataCenter+BaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSDataCenter+BaseData.m"; sourceTree = "<group>"; };
 		FE5F37261CC607CE003A6188 /* DeviceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceTableView.h; path = View/DeviceTableView.h; sourceTree = "<group>"; };
@@ -386,9 +391,9 @@
 				9D24899D1CC50EFB005DB5E7 /* Models */,
 				9D90EF0B1CA28BC400D79769 /* Main */,
 				9D90EF291CA28BDB00D79769 /* Expand */,
-				9D90EF301CA28BE600D79769 /* Resource */,
 				9D90EF2D1CA28BDB00D79769 /* Macros */,
 				9D90EF261CA28BD000D79769 /* Vender */,
+				9D90EF301CA28BE600D79769 /* Resource */,
 				9D90EF001CA287B100D79769 /* Assets.xcassets */,
 				9D90EF021CA287B100D79769 /* LaunchScreen.storyboard */,
 				9D90EF051CA287B100D79769 /* Info.plist */,
@@ -645,6 +650,7 @@
 		9D90EF261CA28BD000D79769 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				9D91FC4B1CE8163700D9798D /* ToolsObject */,
 				9D24898F1CC50E01005DB5E7 /* OpenUDID */,
 				9D6FEE5C1CA3E896006DF0D6 /* MJRefresh */,
 			);
@@ -723,6 +729,7 @@
 		9D90EF301CA28BE600D79769 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9D91FC491CE8155B00D9798D /* device_lighting@2x.png */,
 				9D90EF311CA28BE600D79769 /* Image */,
 				9D90EF321CA28BE600D79769 /* Plist */,
 			);
@@ -817,6 +824,15 @@
 				9D90EF5B1CA295F900D79769 /* money_hl@2x.png */,
 			);
 			path = TabBarImage;
+			sourceTree = "<group>";
+		};
+		9D91FC4B1CE8163700D9798D /* ToolsObject */ = {
+			isa = PBXGroup;
+			children = (
+				9D91FC4C1CE8163700D9798D /* WSToolsObject.h */,
+				9D91FC4D1CE8163700D9798D /* WSToolsObject.m */,
+			);
+			path = ToolsObject;
 			sourceTree = "<group>";
 		};
 		FE5F37211CC5E42F003A6188 /* AppDelegate */ = {
@@ -914,6 +930,7 @@
 				9D90EF5C1CA295F900D79769 /* money_hl@2x.png in Resources */,
 				9D90EF011CA287B100D79769 /* Assets.xcassets in Resources */,
 				9D90EF641CA2963E00D79769 /* prize@2x.png in Resources */,
+				9D91FC4A1CE8155B00D9798D /* device_lighting@2x.png in Resources */,
 				9D90EF621CA2961A00D79769 /* prize_hl@2x.png in Resources */,
 				9D6FEE971CA3E897006DF0D6 /* MJRefresh.bundle in Resources */,
 			);
@@ -1019,6 +1036,7 @@
 				9D90EF361CA28D4B00D79769 /* WSViewController.m in Sources */,
 				9D6FEE9B1CA3E897006DF0D6 /* UIView+MJExtension.m in Sources */,
 				9D6FEE951CA3E897006DF0D6 /* MJRefreshNormalHeader.m in Sources */,
+				9D91FC4E1CE8163700D9798D /* WSToolsObject.m in Sources */,
 				FE5F37381CC61CBD003A6188 /* UIViewAdditions.m in Sources */,
 				9D90EF6C1CA2A40D00D79769 /* WSURL.m in Sources */,
 				9D6FEE8A1CA3E897006DF0D6 /* MJRefreshBackFooter.m in Sources */,
