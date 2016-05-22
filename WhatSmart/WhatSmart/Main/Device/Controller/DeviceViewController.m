@@ -10,12 +10,13 @@
 #import "WSTableView.h"
 #import "MJRefresh.h"
 #import "UIButton+Block.h"
+#import "DeviceTableView.h"
 
 @interface DeviceViewController ()
-@property (nonatomic,strong) WSTableView * tableView;
+@property (nonatomic,strong) DeviceTableView * tableView;
 //@property (weak, nonatomic) UIButton *reloadDataButton;
 
-@property (nonatomic,strong) NSMutableArray * dataSource;
+//@property (nonatomic,strong) NSMutableArray * dataSource;
 
 @end
 
@@ -47,11 +48,11 @@
 
 -(void)updateDeviceData
 {
-    if (self.dataSource.count > 0) {
-        [self.dataSource removeAllObjects];
+    if (self.tableView.deviceArray.count > 0) {
+        [self.tableView.deviceArray removeAllObjects];
     }
-    @synchronized (self.dataSource) {
-        self.dataSource = [WSDataCenter shareDataCenter].DeviceArray;
+    @synchronized (self.tableView.deviceArray) {
+        self.tableView.deviceArray = [WSDataCenter shareDataCenter].DeviceArray;
     }
     [self.tableView reloadData];
 }
@@ -117,22 +118,23 @@
 }
 
 #pragma mark set
--(WSTableView *)tableView
+-(DeviceTableView *)tableView
 {
     if (_tableView == nil) {
-        _tableView = [[WSTableView alloc] initWithFrame:kScreenFrame];
+        _tableView = [[DeviceTableView alloc] initWithFrame:kScreenFrame];
         [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
         _tableView.owner = self;
+        _tableView.fatherVC = self;
     }
     return _tableView;
 }
 
--(NSMutableArray *)dataSource
-{
-    if (_dataSource == nil) {
-        _dataSource = [NSMutableArray new];
-    }
-    return _dataSource;
-}
+//-(NSMutableArray *)dataSource
+//{
+//    if (_dataSource == nil) {
+//        _dataSource = [NSMutableArray new];
+//    }
+//    return _dataSource;
+//}
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSViewController : UIViewController
+@interface WSViewController : UIViewController<MBProgressHUDDelegate>
 
+- (void)showToastMessage:(NSString*)message;
 @end

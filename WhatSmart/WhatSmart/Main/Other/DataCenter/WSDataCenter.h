@@ -59,6 +59,10 @@
 
 @interface WSDataCenter (User)
 
+- (void) LoginWithName:(NSString*)name andPassword:(NSString*) password Completion:(void(^)(BOOL isSuccess, NSError* error)) completion;
+
+- (void) Logout:(void(^)(BOOL isSuccess, NSError* error)) completion;
+
 -(void) RegisterUserWithName:(NSString*) name andPassword:(NSString*) password  Completion:(void(^)(BOOL isSuccess, NSError* error)) completion;
 
 - (void) DeleteUserWithId:(NSString*) Id Completion:(void(^) (BOOL isSuccess, NSError* error)) completion;

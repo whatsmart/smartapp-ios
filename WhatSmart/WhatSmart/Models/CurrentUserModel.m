@@ -14,6 +14,11 @@
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.token forKey:@"token"];
     [aCoder encodeObject:self.expired forKey:@"expired"];
+    [aCoder encodeInteger:self.loginType forKey:@"loginType" ];
+    [aCoder encodeObject:self.userId forKey:@"userId"];
+    [aCoder encodeObject:self.group forKey:@"group"];
+    [aCoder encodeObject:self.permission forKey:@"permission"];
+
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
@@ -24,6 +29,11 @@
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.token = [aDecoder decodeObjectForKey:@"token"];
         self.expired = [aDecoder decodeObjectForKey:@"expired"];
+        self.loginType = [aDecoder decodeIntegerForKey:@"loginType"];
+        self.userId = [aDecoder decodeObjectForKey:@"userId"];
+        self.group = [aDecoder decodeObjectForKey:@"group"];
+        self.permission = [aDecoder decodeObjectForKey:@"permission"];
+
     }
     return self;
 }

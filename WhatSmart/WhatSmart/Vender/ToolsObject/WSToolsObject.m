@@ -1,5 +1,5 @@
 //
-//  ZYTVToolsObject.m
+//  WSToolsObject.m
 //  WhatSmart
 //
 //  Created by 董力云 on 16/3/23.

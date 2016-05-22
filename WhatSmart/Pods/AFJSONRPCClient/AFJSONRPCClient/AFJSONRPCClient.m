@@ -72,9 +72,9 @@ static NSString * AFJSONRPCLocalizedErrorMessageForCode(NSInteger code) {
 
     self.requestSerializer = [AFJSONRequestSerializer serializer];
     [self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-
-    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"application/json-rpc", @"application/jsonrequest", nil];
-
+    [self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"application/json-rpc", @"application/jsonrequest", @"text/html",nil];
     self.endpointURL = URL;
 
     return self;

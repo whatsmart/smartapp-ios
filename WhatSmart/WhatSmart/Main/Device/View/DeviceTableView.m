@@ -19,12 +19,13 @@
         self.delegate = self;
         self.dataSource = self;
     }
+    
     return self;
 }
 #pragma mark -UITableViewDeviceArray
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_DeviceArray count];
+    return [_deviceArray count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -32,9 +33,9 @@
     WSDeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuserIdentifier];
     if (cell == nil)
     {
-        cell = [[WSDeviceTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuserIdentifier];
+        cell = [[WSDeviceTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuserIdentifier];
     }
-    DeviceModel *model =[_DeviceArray objectAtIndex:indexPath.row] ;
+    DeviceModel *model =[_deviceArray objectAtIndex:indexPath.row] ;
     cell.model = model;
     
     return cell;
@@ -47,6 +48,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self.fatherVC createLightSettingViewWithModel:[_deviceArray objectAtIndex:indexPath.row]];
+
 }
 @end

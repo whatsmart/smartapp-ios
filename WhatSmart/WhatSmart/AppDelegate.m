@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainTabBarController.h"
-
+#import "WSMainNavigationController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,8 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+
     MainTabBarController * mainVC = [[MainTabBarController alloc] init];
-    self.window.rootViewController = mainVC;
+    
+    WSMainNavigationController *rootNavController = [[WSMainNavigationController alloc] initWithRootViewController:mainVC];
+
+    self.rootNavController = rootNavController;
+    self.window.rootViewController = rootNavController;
     [self.window makeKeyAndVisible];
     
     return YES;

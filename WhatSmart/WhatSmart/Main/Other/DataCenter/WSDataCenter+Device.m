@@ -21,17 +21,16 @@
     DLog(@"请求获取设备列表......");
     [client invokeMethod:@"get_devices" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        if ([[responseObject objectForKey:@"result"] isKindOfClass:[NSArray class]]) {
+        if ([responseObject  isKindOfClass:[NSArray class]]) {
             NSMutableArray * deviceModelArr = [NSMutableArray new];
 
-            NSArray * result = [responseObject objectForKey:@"result"];
-            for (NSDictionary * dic in result) {
+            for (NSDictionary * dic in responseObject) {
                 __block  DeviceModel * model = [[DeviceModel alloc] initWithDic:dic];
                 [deviceModelArr addObject:model];
             }
             if (deviceModelArr.count > 0) {
                 @synchronized (self.DeviceArray) {
-                    self.DeviceArray = [NSMutableArray arrayWithObject:deviceModelArr];
+                    self.DeviceArray = [NSMutableArray arrayWithArray:deviceModelArr];
                 }
             }
         }

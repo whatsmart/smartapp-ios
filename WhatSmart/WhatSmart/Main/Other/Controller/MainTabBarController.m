@@ -10,17 +10,17 @@
 #import "TaskViewController.h"
 #import "DeviceViewController.h"
 #import "MessageViewController.h"
-#import "MeViewController.h"
-#import "SettingViewController.h"
+#import "WSSettingViewController.h"
 #import "WSNavigationController.h"
+#import "WSUserCenterViewController.h"
 
 @interface MainTabBarController ()
 
 @property(nonatomic,strong) TaskViewController *    taskVC;
 @property(nonatomic,strong) DeviceViewController *  deviceVC;
 @property(nonatomic,strong) MessageViewController * messageVC;
-@property(nonatomic,strong) MeViewController *      meVC;
-@property(nonatomic,strong) SettingViewController*  settingVC;
+@property(nonatomic,strong) WSUserCenterViewController *      meVC;
+@property(nonatomic,strong) WSSettingViewController*  settingVC;
 
 
 
@@ -41,10 +41,10 @@
     _messageVC = [[MessageViewController alloc] init];
 //    _messageVC.title = Title_Message;
     _messageVC.navigationItem.title = Title_Message;
-    _meVC = [[MeViewController alloc] init];
+    _meVC = [[WSUserCenterViewController alloc] init];
     _meVC.title = Title_Me;
     
-    _settingVC = [[SettingViewController alloc] init];
+    _settingVC = [[WSSettingViewController alloc] init];
     _settingVC.title = Title_Setting;
     
     

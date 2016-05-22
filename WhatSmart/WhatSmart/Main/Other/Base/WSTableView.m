@@ -19,11 +19,20 @@
     // Drawing code
 }
 */
--(instancetype) initWithCoder:(NSCoder *)aDecoder
+//-(instancetype) initWithCoder:(NSCoder *)aDecoder
+//{
+//    if(self = [super initWithCoder:aDecoder]){
+//        self.tableFooterView = [[UIView alloc] init];//tableview空白不显示分割线
+//        
+//        return self;
+//    }
+//    return nil;
+//}
+
+-(instancetype) initWithFrame:(CGRect)frame
 {
-    if(self = [super initWithCoder:aDecoder]){
+    if (self= [super initWithFrame:frame]) {
         self.tableFooterView = [[UIView alloc] init];//tableview空白不显示分割线
-        
         return self;
     }
     return nil;

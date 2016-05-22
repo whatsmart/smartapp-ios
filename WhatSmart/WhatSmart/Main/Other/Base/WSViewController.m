@@ -24,6 +24,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)showToastMessage:(NSString*)message  {
+    MBProgressHUD* tmpHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    tmpHUD.userInteractionEnabled = NO;
+    [self.view addSubview:tmpHUD];
+    [self.view bringSubviewToFront:tmpHUD];
+    tmpHUD.mode = MBProgressHUDModeText;
+    tmpHUD.delegate = self;
+    tmpHUD.labelText = message;
+    [tmpHUD show:YES];
+    [tmpHUD hide:YES afterDelay:1.5];
+    tmpHUD.removeFromSuperViewOnHide=YES;
+}
+
+
+
 /*
 #pragma mark - Navigation
 

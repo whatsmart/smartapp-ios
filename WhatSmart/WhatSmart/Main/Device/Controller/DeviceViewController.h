@@ -7,7 +7,16 @@
 //
 
 #import "WSViewController.h"
+#import "DeviceModel.h"
 
 @interface DeviceViewController : WSViewController
+{
+    __strong UIView * _lightSetView;
+}
+@end
+
+@interface DeviceViewController (SettingView)
+
+-(void) createLightSettingViewWithModel:(DeviceModel*)model;
 
 @end

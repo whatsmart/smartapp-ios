@@ -13,5 +13,7 @@
 #define GetDeviceListDataRefreshed  @"GetDeviceListDataRefreshed"
 #define GetUserListDataRefreshed  @"GetUserListDataRefreshed"
 
+#define LoginStateRefreshed  @"LoginStateRefreshed"
+
 
 #endif /* NotificationHeader_h */

@@ -8,9 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    UserLoginTypeLogout = 0,
+    UserLoginTypeQQ,
+    UserLoginTypeSina,
+    UserLoginTypeWS,
+    UserLoginTypeWeCaChat,
+} UserLoginType;
+
+
 @interface CurrentUserModel : NSObject
 
 @property (nonatomic,strong) NSString * name;
 @property (nonatomic,strong) NSString * token;
 @property (nonatomic,strong) NSNumber * expired;
+@property (nonatomic,assign) UserLoginType loginType;
+@property (nonatomic,strong) NSString * userId;
+@property (nonatomic,strong) NSString * group;
+@property (nonatomic,strong) NSDictionary * permission;
+
 @end

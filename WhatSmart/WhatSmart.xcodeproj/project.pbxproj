@@ -52,8 +52,6 @@
 		9D90EF4B1CA2904800D79769 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF4A1CA2904800D79769 /* TaskViewController.m */; };
 		9D90EF4E1CA2905600D79769 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF4D1CA2905600D79769 /* DeviceViewController.m */; };
 		9D90EF511CA2906100D79769 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF501CA2906100D79769 /* MessageViewController.m */; };
-		9D90EF541CA2906A00D79769 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF531CA2906A00D79769 /* MeViewController.m */; };
-		9D90EF571CA2907500D79769 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF561CA2907500D79769 /* SettingViewController.m */; };
 		9D90EF5C1CA295F900D79769 /* money_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D90EF5B1CA295F900D79769 /* money_hl@2x.png */; };
 		9D90EF5E1CA2960300D79769 /* money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D90EF5D1CA2960300D79769 /* money@2x.png */; };
 		9D90EF601CA2960F00D79769 /* my_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D90EF5F1CA2960F00D79769 /* my_hl@2x.png */; };
@@ -65,6 +63,28 @@
 		9D90EF771CA2A81000D79769 /* WSDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF761CA2A81000D79769 /* WSDeviceTableViewCell.m */; };
 		9D91FC4A1CE8155B00D9798D /* device_lighting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D91FC491CE8155B00D9798D /* device_lighting@2x.png */; };
 		9D91FC4E1CE8163700D9798D /* WSToolsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D91FC4D1CE8163700D9798D /* WSToolsObject.m */; };
+		9D982C1A1CF14FF300D547BA /* device_lighting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C191CF14FF300D547BA /* device_lighting@3x.png */; };
+		9D982C1D1CF1587300D547BA /* DeviceViewController+SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C1C1CF1587300D547BA /* DeviceViewController+SettingView.m */; };
+		9D982C201CF19AC600D547BA /* WSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C1F1CF19AC600D547BA /* WSLoginViewController.m */; };
+		9D982C271CF1AD9300D547BA /* WSUserCenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C221CF1AD9300D547BA /* WSUserCenterHeadView.m */; };
+		9D982C281CF1AD9300D547BA /* WSUserCenterTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C241CF1AD9300D547BA /* WSUserCenterTableView.m */; };
+		9D982C291CF1AD9300D547BA /* WSUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C261CF1AD9300D547BA /* WSUserCenterViewController.m */; };
+		9D982C2C1CF1AE5700D547BA /* UserCenterFatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C2B1CF1AE5700D547BA /* UserCenterFatherViewController.m */; };
+		9D982C301CF1AFA300D547BA /* MBProgressHUD+WS.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C2F1CF1AFA300D547BA /* MBProgressHUD+WS.m */; };
+		9D982C331CF1B25100D547BA /* WSNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C321CF1B25100D547BA /* WSNormalTableViewCell.m */; };
+		9D982C361CF1B4AE00D547BA /* userinfoBgImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C341CF1B4AE00D547BA /* userinfoBgImage@2x.png */; };
+		9D982C371CF1B4AE00D547BA /* userinfoBgImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C351CF1B4AE00D547BA /* userinfoBgImage@3x.png */; };
+		9D982C3A1CF1B6DB00D547BA /* WSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C391CF1B6DB00D547BA /* WSMainNavigationController.m */; };
+		9D982C3D1CF1BD5800D547BA /* WSRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C3C1CF1BD5800D547BA /* WSRegViewController.m */; };
+		9D982C401CF1C1DC00D547BA /* returnArrowBtn_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C3E1CF1C1DC00D547BA /* returnArrowBtn_black@2x.png */; };
+		9D982C411CF1C1DC00D547BA /* returnArrowBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C3F1CF1C1DC00D547BA /* returnArrowBtn@2x.png */; };
+		9D982C481CF1E19C00D547BA /* WSAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C431CF1E19C00D547BA /* WSAboutUsViewController.m */; };
+		9D982C491CF1E19C00D547BA /* WSFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C451CF1E19C00D547BA /* WSFeedBackViewController.m */; };
+		9D982C4A1CF1E19C00D547BA /* WSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C471CF1E19C00D547BA /* WSSettingViewController.m */; };
+		9D982C4D1CF1EDF200D547BA /* login_username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C4B1CF1EDF200D547BA /* login_username@2x.png */; };
+		9D982C4E1CF1EDF200D547BA /* login_username@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C4C1CF1EDF200D547BA /* login_username@3x.png */; };
+		9D982C511CF1EDFE00D547BA /* login_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C4F1CF1EDFE00D547BA /* login_password@2x.png */; };
+		9D982C521CF1EDFE00D547BA /* login_password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C501CF1EDFE00D547BA /* login_password@3x.png */; };
 		FE5F37251CC6041A003A6188 /* WSDataCenter+BaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F37241CC6041A003A6188 /* WSDataCenter+BaseData.m */; };
 		FE5F37281CC607CE003A6188 /* DeviceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F37271CC607CE003A6188 /* DeviceTableView.m */; };
 		FE5F37381CC61CBD003A6188 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F37371CC61CBD003A6188 /* UIViewAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -161,10 +181,6 @@
 		9D90EF4D1CA2905600D79769 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceViewController.m; path = Controller/DeviceViewController.m; sourceTree = "<group>"; };
 		9D90EF4F1CA2906100D79769 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		9D90EF501CA2906100D79769 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		9D90EF521CA2906A00D79769 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		9D90EF531CA2906A00D79769 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
-		9D90EF551CA2907500D79769 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		9D90EF561CA2907500D79769 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		9D90EF581CA2919100D79769 /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
 		9D90EF591CA2926900D79769 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9D90EF5B1CA295F900D79769 /* money_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_hl@2x.png"; sourceTree = "<group>"; };
@@ -184,6 +200,40 @@
 		9D91FC491CE8155B00D9798D /* device_lighting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_lighting@2x.png"; sourceTree = "<group>"; };
 		9D91FC4C1CE8163700D9798D /* WSToolsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSToolsObject.h; sourceTree = "<group>"; };
 		9D91FC4D1CE8163700D9798D /* WSToolsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSToolsObject.m; sourceTree = "<group>"; };
+		9D982C191CF14FF300D547BA /* device_lighting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_lighting@3x.png"; sourceTree = "<group>"; };
+		9D982C1C1CF1587300D547BA /* DeviceViewController+SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DeviceViewController+SettingView.m"; path = "View/DeviceViewController+SettingView.m"; sourceTree = "<group>"; };
+		9D982C1E1CF19AC600D547BA /* WSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLoginViewController.h; sourceTree = "<group>"; };
+		9D982C1F1CF19AC600D547BA /* WSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLoginViewController.m; sourceTree = "<group>"; };
+		9D982C211CF1AD9300D547BA /* WSUserCenterHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUserCenterHeadView.h; sourceTree = "<group>"; };
+		9D982C221CF1AD9300D547BA /* WSUserCenterHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUserCenterHeadView.m; sourceTree = "<group>"; };
+		9D982C231CF1AD9300D547BA /* WSUserCenterTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUserCenterTableView.h; sourceTree = "<group>"; };
+		9D982C241CF1AD9300D547BA /* WSUserCenterTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUserCenterTableView.m; sourceTree = "<group>"; };
+		9D982C251CF1AD9300D547BA /* WSUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUserCenterViewController.h; sourceTree = "<group>"; };
+		9D982C261CF1AD9300D547BA /* WSUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUserCenterViewController.m; sourceTree = "<group>"; };
+		9D982C2A1CF1AE5700D547BA /* UserCenterFatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterFatherViewController.h; sourceTree = "<group>"; };
+		9D982C2B1CF1AE5700D547BA /* UserCenterFatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterFatherViewController.m; sourceTree = "<group>"; };
+		9D982C2E1CF1AFA300D547BA /* MBProgressHUD+WS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+WS.h"; sourceTree = "<group>"; };
+		9D982C2F1CF1AFA300D547BA /* MBProgressHUD+WS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+WS.m"; sourceTree = "<group>"; };
+		9D982C311CF1B25100D547BA /* WSNormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNormalTableViewCell.h; sourceTree = "<group>"; };
+		9D982C321CF1B25100D547BA /* WSNormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNormalTableViewCell.m; sourceTree = "<group>"; };
+		9D982C341CF1B4AE00D547BA /* userinfoBgImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userinfoBgImage@2x.png"; sourceTree = "<group>"; };
+		9D982C351CF1B4AE00D547BA /* userinfoBgImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userinfoBgImage@3x.png"; sourceTree = "<group>"; };
+		9D982C381CF1B6DB00D547BA /* WSMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMainNavigationController.h; sourceTree = "<group>"; };
+		9D982C391CF1B6DB00D547BA /* WSMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMainNavigationController.m; sourceTree = "<group>"; };
+		9D982C3B1CF1BD5800D547BA /* WSRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRegViewController.h; sourceTree = "<group>"; };
+		9D982C3C1CF1BD5800D547BA /* WSRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRegViewController.m; sourceTree = "<group>"; };
+		9D982C3E1CF1C1DC00D547BA /* returnArrowBtn_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "returnArrowBtn_black@2x.png"; sourceTree = "<group>"; };
+		9D982C3F1CF1C1DC00D547BA /* returnArrowBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "returnArrowBtn@2x.png"; sourceTree = "<group>"; };
+		9D982C421CF1E19C00D547BA /* WSAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAboutUsViewController.h; sourceTree = "<group>"; };
+		9D982C431CF1E19C00D547BA /* WSAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAboutUsViewController.m; sourceTree = "<group>"; };
+		9D982C441CF1E19C00D547BA /* WSFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedBackViewController.h; sourceTree = "<group>"; };
+		9D982C451CF1E19C00D547BA /* WSFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedBackViewController.m; sourceTree = "<group>"; };
+		9D982C461CF1E19C00D547BA /* WSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSettingViewController.h; sourceTree = "<group>"; };
+		9D982C471CF1E19C00D547BA /* WSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSettingViewController.m; sourceTree = "<group>"; };
+		9D982C4B1CF1EDF200D547BA /* login_username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_username@2x.png"; sourceTree = "<group>"; };
+		9D982C4C1CF1EDF200D547BA /* login_username@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_username@3x.png"; sourceTree = "<group>"; };
+		9D982C4F1CF1EDFE00D547BA /* login_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password@2x.png"; sourceTree = "<group>"; };
+		9D982C501CF1EDFE00D547BA /* login_password@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password@3x.png"; sourceTree = "<group>"; };
 		D83F557E91E2400EF8B671C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FE5F37241CC6041A003A6188 /* WSDataCenter+BaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSDataCenter+BaseData.m"; sourceTree = "<group>"; };
 		FE5F37261CC607CE003A6188 /* DeviceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceTableView.h; path = View/DeviceTableView.h; sourceTree = "<group>"; };
@@ -433,6 +483,7 @@
 				FE5F37271CC607CE003A6188 /* DeviceTableView.m */,
 				9D90EF751CA2A81000D79769 /* WSDeviceTableViewCell.h */,
 				9D90EF761CA2A81000D79769 /* WSDeviceTableViewCell.m */,
+				9D982C1C1CF1587300D547BA /* DeviceViewController+SettingView.m */,
 				9D90EF0D1CA28BC400D79769 /* Controller */,
 				9D90EF0E1CA28BC400D79769 /* Model */,
 				9D90EF0F1CA28BC400D79769 /* Other */,
@@ -483,8 +534,16 @@
 		9D90EF121CA28BC400D79769 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9D90EF521CA2906A00D79769 /* MeViewController.h */,
-				9D90EF531CA2906A00D79769 /* MeViewController.m */,
+				9D982C311CF1B25100D547BA /* WSNormalTableViewCell.h */,
+				9D982C321CF1B25100D547BA /* WSNormalTableViewCell.m */,
+				9D982C2A1CF1AE5700D547BA /* UserCenterFatherViewController.h */,
+				9D982C2B1CF1AE5700D547BA /* UserCenterFatherViewController.m */,
+				9D982C211CF1AD9300D547BA /* WSUserCenterHeadView.h */,
+				9D982C221CF1AD9300D547BA /* WSUserCenterHeadView.m */,
+				9D982C231CF1AD9300D547BA /* WSUserCenterTableView.h */,
+				9D982C241CF1AD9300D547BA /* WSUserCenterTableView.m */,
+				9D982C251CF1AD9300D547BA /* WSUserCenterViewController.h */,
+				9D982C261CF1AD9300D547BA /* WSUserCenterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -579,8 +638,12 @@
 		9D90EF1D1CA28BC400D79769 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9D90EF551CA2907500D79769 /* SettingViewController.h */,
-				9D90EF561CA2907500D79769 /* SettingViewController.m */,
+				9D982C421CF1E19C00D547BA /* WSAboutUsViewController.h */,
+				9D982C431CF1E19C00D547BA /* WSAboutUsViewController.m */,
+				9D982C441CF1E19C00D547BA /* WSFeedBackViewController.h */,
+				9D982C451CF1E19C00D547BA /* WSFeedBackViewController.m */,
+				9D982C461CF1E19C00D547BA /* WSSettingViewController.h */,
+				9D982C471CF1E19C00D547BA /* WSSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -673,6 +736,7 @@
 		9D90EF2A1CA28BDB00D79769 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				9D982C2D1CF1AF8B00D547BA /* MBProgressHUD+WS */,
 				FE5F372F1CC61C56003A6188 /* UIViewAdditions */,
 				FE5F372E1CC61C2F003A6188 /* UIButton+Block */,
 			);
@@ -729,6 +793,15 @@
 		9D90EF301CA28BE600D79769 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9D982C4F1CF1EDFE00D547BA /* login_password@2x.png */,
+				9D982C501CF1EDFE00D547BA /* login_password@3x.png */,
+				9D982C4B1CF1EDF200D547BA /* login_username@2x.png */,
+				9D982C4C1CF1EDF200D547BA /* login_username@3x.png */,
+				9D982C3E1CF1C1DC00D547BA /* returnArrowBtn_black@2x.png */,
+				9D982C3F1CF1C1DC00D547BA /* returnArrowBtn@2x.png */,
+				9D982C341CF1B4AE00D547BA /* userinfoBgImage@2x.png */,
+				9D982C351CF1B4AE00D547BA /* userinfoBgImage@3x.png */,
+				9D982C191CF14FF300D547BA /* device_lighting@3x.png */,
 				9D91FC491CE8155B00D9798D /* device_lighting@2x.png */,
 				9D90EF311CA28BE600D79769 /* Image */,
 				9D90EF321CA28BE600D79769 /* Plist */,
@@ -771,6 +844,10 @@
 		9D90EF3A1CA28E8200D79769 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9D982C3B1CF1BD5800D547BA /* WSRegViewController.h */,
+				9D982C3C1CF1BD5800D547BA /* WSRegViewController.m */,
+				9D982C1E1CF19AC600D547BA /* WSLoginViewController.h */,
+				9D982C1F1CF19AC600D547BA /* WSLoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -809,6 +886,8 @@
 			children = (
 				9D90EF461CA2900F00D79769 /* MainTabBarController.h */,
 				9D90EF471CA2900F00D79769 /* MainTabBarController.m */,
+				9D982C381CF1B6DB00D547BA /* WSMainNavigationController.h */,
+				9D982C391CF1B6DB00D547BA /* WSMainNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -833,6 +912,15 @@
 				9D91FC4D1CE8163700D9798D /* WSToolsObject.m */,
 			);
 			path = ToolsObject;
+			sourceTree = "<group>";
+		};
+		9D982C2D1CF1AF8B00D547BA /* MBProgressHUD+WS */ = {
+			isa = PBXGroup;
+			children = (
+				9D982C2E1CF1AFA300D547BA /* MBProgressHUD+WS.h */,
+				9D982C2F1CF1AFA300D547BA /* MBProgressHUD+WS.m */,
+			);
+			path = "MBProgressHUD+WS";
 			sourceTree = "<group>";
 		};
 		FE5F37211CC5E42F003A6188 /* AppDelegate */ = {
@@ -924,15 +1012,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D90EF661CA2964C00D79769 /* my@2x.png in Resources */,
+				9D982C401CF1C1DC00D547BA /* returnArrowBtn_black@2x.png in Resources */,
 				9D90EF5E1CA2960300D79769 /* money@2x.png in Resources */,
 				9D90EF601CA2960F00D79769 /* my_hl@2x.png in Resources */,
+				9D982C411CF1C1DC00D547BA /* returnArrowBtn@2x.png in Resources */,
+				9D982C511CF1EDFE00D547BA /* login_password@2x.png in Resources */,
 				9D90EF041CA287B100D79769 /* LaunchScreen.storyboard in Resources */,
 				9D90EF5C1CA295F900D79769 /* money_hl@2x.png in Resources */,
+				9D982C1A1CF14FF300D547BA /* device_lighting@3x.png in Resources */,
 				9D90EF011CA287B100D79769 /* Assets.xcassets in Resources */,
 				9D90EF641CA2963E00D79769 /* prize@2x.png in Resources */,
+				9D982C4D1CF1EDF200D547BA /* login_username@2x.png in Resources */,
 				9D91FC4A1CE8155B00D9798D /* device_lighting@2x.png in Resources */,
 				9D90EF621CA2961A00D79769 /* prize_hl@2x.png in Resources */,
+				9D982C361CF1B4AE00D547BA /* userinfoBgImage@2x.png in Resources */,
+				9D982C371CF1B4AE00D547BA /* userinfoBgImage@3x.png in Resources */,
 				9D6FEE971CA3E897006DF0D6 /* MJRefresh.bundle in Resources */,
+				9D982C521CF1EDFE00D547BA /* login_password@3x.png in Resources */,
+				9D982C4E1CF1EDF200D547BA /* login_username@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,28 +1088,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D982C291CF1AD9300D547BA /* WSUserCenterViewController.m in Sources */,
+				9D982C3A1CF1B6DB00D547BA /* WSMainNavigationController.m in Sources */,
+				9D982C1D1CF1587300D547BA /* DeviceViewController+SettingView.m in Sources */,
 				9D86E0B61CC3513500342202 /* WSError.m in Sources */,
 				9D86E0B91CC3AD8C00342202 /* WSDeviceCellModel.m in Sources */,
 				9D86E0B21CC3356E00342202 /* WSNetworkManager+Device.m in Sources */,
 				9D6FEE961CA3E897006DF0D6 /* MJRefreshStateHeader.m in Sources */,
 				9D6FEE921CA3E897006DF0D6 /* MJRefreshBackNormalFooter.m in Sources */,
 				FE5F37281CC607CE003A6188 /* DeviceTableView.m in Sources */,
+				9D982C281CF1AD9300D547BA /* WSUserCenterTableView.m in Sources */,
 				9D6FEE8C1CA3E897006DF0D6 /* MJRefreshFooter.m in Sources */,
 				9D90EF451CA28FD800D79769 /* WSTabBarController.m in Sources */,
 				FE5F37251CC6041A003A6188 /* WSDataCenter+BaseData.m in Sources */,
 				9D2489931CC50E39005DB5E7 /* OpenUDID.m in Sources */,
 				9D6FEE931CA3E897006DF0D6 /* MJRefreshBackStateFooter.m in Sources */,
+				9D982C491CF1E19C00D547BA /* WSFeedBackViewController.m in Sources */,
 				FE5F373B1CC61CC4003A6188 /* UIButton+Block.m in Sources */,
+				9D982C201CF19AC600D547BA /* WSLoginViewController.m in Sources */,
 				9D90EF481CA2900F00D79769 /* MainTabBarController.m in Sources */,
-				9D90EF571CA2907500D79769 /* SettingViewController.m in Sources */,
 				9D24899B1CC50ECE005DB5E7 /* WSDataCenter+Device.m in Sources */,
 				9D6FEE981CA3E897006DF0D6 /* MJRefreshConst.m in Sources */,
 				9D90EF421CA28F7600D79769 /* WSTableViewController.m in Sources */,
+				9D982C331CF1B25100D547BA /* WSNormalTableViewCell.m in Sources */,
 				9D90EF391CA28D6F00D79769 /* WSNavigationController.m in Sources */,
 				9D6FEE8E1CA3E897006DF0D6 /* MJRefreshAutoGifFooter.m in Sources */,
 				9D86E0AC1CC332F300342202 /* WSNetworkManager.m in Sources */,
 				9D6FEE901CA3E897006DF0D6 /* MJRefreshAutoStateFooter.m in Sources */,
 				9D90EEFF1CA287B100D79769 /* WhatSmart.xcdatamodeld in Sources */,
+				9D982C3D1CF1BD5800D547BA /* WSRegViewController.m in Sources */,
 				9D90EF511CA2906100D79769 /* MessageViewController.m in Sources */,
 				9D6FEE891CA3E897006DF0D6 /* MJRefreshAutoFooter.m in Sources */,
 				9D90EEF61CA287B100D79769 /* AppDelegate.m in Sources */,
@@ -1027,11 +1131,13 @@
 				9D6FEE941CA3E897006DF0D6 /* MJRefreshGifHeader.m in Sources */,
 				9D6FEE8B1CA3E897006DF0D6 /* MJRefreshComponent.m in Sources */,
 				9D90EF4B1CA2904800D79769 /* TaskViewController.m in Sources */,
+				9D982C481CF1E19C00D547BA /* WSAboutUsViewController.m in Sources */,
 				9D6FEE8F1CA3E897006DF0D6 /* MJRefreshAutoNormalFooter.m in Sources */,
 				9D2489A51CC50EFB005DB5E7 /* DeviceModel.m in Sources */,
-				9D90EF541CA2906A00D79769 /* MeViewController.m in Sources */,
 				9D90EF4E1CA2905600D79769 /* DeviceViewController.m in Sources */,
 				9D2489A61CC50EFB005DB5E7 /* UserModel.m in Sources */,
+				9D982C301CF1AFA300D547BA /* MBProgressHUD+WS.m in Sources */,
+				9D982C2C1CF1AE5700D547BA /* UserCenterFatherViewController.m in Sources */,
 				9D90EEF31CA287B100D79769 /* main.m in Sources */,
 				9D90EF361CA28D4B00D79769 /* WSViewController.m in Sources */,
 				9D6FEE9B1CA3E897006DF0D6 /* UIView+MJExtension.m in Sources */,
@@ -1039,6 +1145,8 @@
 				9D91FC4E1CE8163700D9798D /* WSToolsObject.m in Sources */,
 				FE5F37381CC61CBD003A6188 /* UIViewAdditions.m in Sources */,
 				9D90EF6C1CA2A40D00D79769 /* WSURL.m in Sources */,
+				9D982C271CF1AD9300D547BA /* WSUserCenterHeadView.m in Sources */,
+				9D982C4A1CF1E19C00D547BA /* WSSettingViewController.m in Sources */,
 				9D6FEE8A1CA3E897006DF0D6 /* MJRefreshBackFooter.m in Sources */,
 				9D24899A1CC50ECE005DB5E7 /* WSDataCenter.m in Sources */,
 				9D90EF771CA2A81000D79769 /* WSDeviceTableViewCell.m in Sources */,

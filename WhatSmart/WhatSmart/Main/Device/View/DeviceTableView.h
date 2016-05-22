@@ -7,9 +7,10 @@
 //
 
 #import "WSTableView.h"
+#import "DeviceViewController.h"
 
 @interface DeviceTableView : WSTableView <UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,strong) NSArray * DeviceArray;
-
+@property (nonatomic,strong) NSMutableArray * deviceArray;
+@property (nonatomic,strong) DeviceViewController* fatherVC;
 @end
