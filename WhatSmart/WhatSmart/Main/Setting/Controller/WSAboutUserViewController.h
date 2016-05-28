@@ -1,5 +1,5 @@
 //
-//  WSAboutUsViewController.h
+//  WSAboutUserViewController.h
 //  WhatSmart
 //
 //  Created by 董力云 on 16/3/23.
@@ -8,6 +8,6 @@
 
 #import "UserCenterFatherViewController.h"
 
-@interface WSAboutUsViewController : UserCenterFatherViewController
+@interface WSAboutUserViewController : UserCenterFatherViewController
 
 @end

@@ -1,5 +1,5 @@
 //
-//  WSAboutUsViewController.m
+//  WSAboutUserViewController.m
 //  WhatSmart
 //
 //  Created by 董力云 on 16/3/23.
@@ -7,13 +7,13 @@
 //
 //  关于我们 界面
 
-#import "WSAboutUsViewController.h"
+#import "WSAboutUserViewController.h"
 
-@interface WSAboutUsViewController ()
+@interface WSAboutUserViewController ()
 
 @end
 
-@implementation WSAboutUsViewController
+@implementation WSAboutUserViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 } UserLoginType;
 
 
-@interface CurrentUserModel : NSObject
+@interface CurrentUserModel : NSObject<NSCoding>
 
 @property (nonatomic,strong) NSString * name;
 @property (nonatomic,strong) NSString * token;

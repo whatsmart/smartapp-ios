@@ -26,4 +26,6 @@
 #import <POP.h>
 #import <Masonry.h>
 
+#import "EGOCache.h"
+
 #endif /* PrefixHeader_pch */

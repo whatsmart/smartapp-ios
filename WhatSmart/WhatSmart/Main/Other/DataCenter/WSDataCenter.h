@@ -75,6 +75,9 @@
 
 //-(void) LoginWith
 
+- (void)autoLogin;
+
+
 //???????? add_user 作用  用户id name
 
 @end

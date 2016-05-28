@@ -190,7 +190,8 @@
     
     [self showHUDWithMessage:@"注册中..."];
     
-//    [[WSDataCenter shareDataCenter] loginWith:@{@"uname":self.userNameTextField.text,@"upass":self.passwordTextField.text,@"platform":@"ios"}];
+    [[WSDataCenter shareDataCenter] RegisterUserWithName:self.userNameTextField.text andPassword:self.passwordTextField.text Completion:nil];
+    
 }
 
 #pragma mark - textFieldDelegate
@@ -222,21 +223,22 @@
     return YES;
 }
 
-#pragma mark - 注册状态发生变化
-- (void)regStateUpdated:(NSNotification*)notice {
-    
+#pragma mark - 注册结果处理
+- (void)registUserResultNotification:(NSNotification*)notice{
+    BOOL isSeccess =  [notice.object boolValue];
     [self hideHUD];
-    
-    if ([WSDataCenter shareDataCenter].currentUser.loginType != UserLoginTypeLogout) {
+    if (isSeccess) {
         [self showToastMessage:@"注册成功"];
-        [self.navigationController popViewControllerAnimated:YES];
+        long count = self.navigationController.viewControllers.count;
+        if (count <= 3) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }else{
+            UIViewController * targetVC = [self.navigationController.viewControllers objectAtIndex:count - 3];
+            [self.navigationController popToViewController:targetVC animated:YES];
+        }
     }else{
         NSString * desc = [notice.userInfo objectForKey:@"desc"];
-        if ([desc isKindOfClass:[NSString class]]) {
-            [self showToastMessage:desc];
-        }else {
-            [self showToastMessage:@"注册失败"];
-        }
+        [self showToastMessage:desc];
     }
 }
 
@@ -253,12 +255,13 @@
 #pragma mark - 通知处理
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(regStateUpdated:) name:LoginStateRefreshed object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registUserResultNotification:) name:RegistUserNotifacationName object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:LoginStateRefreshed object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RegistUserNotifacationName object:nil];
+
 }
 
 @end

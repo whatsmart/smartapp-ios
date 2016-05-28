@@ -14,6 +14,7 @@
 #define GetUserListDataRefreshed  @"GetUserListDataRefreshed"
 
 #define LoginStateRefreshed  @"LoginStateRefreshed"
+#define RegistUserNotifacationName @"RegistUserNotifacationName"
 
 
 #endif /* NotificationHeader_h */

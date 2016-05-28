@@ -14,5 +14,6 @@
  */
 #define KWSAPIHOSTURL @"http://121.42.156.167/jsonrpc/v1.0/"
 
+#define kCacheUserInfo       @"CacheUserInfo"
 
 #endif /* AppConfig_h */

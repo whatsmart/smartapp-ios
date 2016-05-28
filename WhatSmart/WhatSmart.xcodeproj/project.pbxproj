@@ -35,6 +35,7 @@
 		9D6FEE991CA3E897006DF0D6 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FEE841CA3E897006DF0D6 /* UIScrollView+MJExtension.m */; };
 		9D6FEE9A1CA3E897006DF0D6 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FEE861CA3E897006DF0D6 /* UIScrollView+MJRefresh.m */; };
 		9D6FEE9B1CA3E897006DF0D6 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FEE881CA3E897006DF0D6 /* UIView+MJExtension.m */; };
+		9D78E7221CF931CC005A2E94 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E7211CF931CC005A2E94 /* EGOCache.m */; };
 		9D86E0AC1CC332F300342202 /* WSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0AB1CC332F300342202 /* WSNetworkManager.m */; };
 		9D86E0B21CC3356E00342202 /* WSNetworkManager+Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0B11CC3356E00342202 /* WSNetworkManager+Device.m */; };
 		9D86E0B61CC3513500342202 /* WSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0B51CC3513500342202 /* WSError.m */; };
@@ -78,7 +79,7 @@
 		9D982C3D1CF1BD5800D547BA /* WSRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C3C1CF1BD5800D547BA /* WSRegViewController.m */; };
 		9D982C401CF1C1DC00D547BA /* returnArrowBtn_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C3E1CF1C1DC00D547BA /* returnArrowBtn_black@2x.png */; };
 		9D982C411CF1C1DC00D547BA /* returnArrowBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C3F1CF1C1DC00D547BA /* returnArrowBtn@2x.png */; };
-		9D982C481CF1E19C00D547BA /* WSAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C431CF1E19C00D547BA /* WSAboutUsViewController.m */; };
+		9D982C481CF1E19C00D547BA /* WSAboutUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C431CF1E19C00D547BA /* WSAboutUserViewController.m */; };
 		9D982C491CF1E19C00D547BA /* WSFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C451CF1E19C00D547BA /* WSFeedBackViewController.m */; };
 		9D982C4A1CF1E19C00D547BA /* WSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D982C471CF1E19C00D547BA /* WSSettingViewController.m */; };
 		9D982C4D1CF1EDF200D547BA /* login_username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D982C4B1CF1EDF200D547BA /* login_username@2x.png */; };
@@ -150,6 +151,8 @@
 		9D6FEE861CA3E897006DF0D6 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		9D6FEE871CA3E897006DF0D6 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		9D6FEE881CA3E897006DF0D6 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		9D78E7201CF931CC005A2E94 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		9D78E7211CF931CC005A2E94 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		9D86E0AA1CC332F300342202 /* WSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNetworkManager.h; sourceTree = "<group>"; };
 		9D86E0AB1CC332F300342202 /* WSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNetworkManager.m; sourceTree = "<group>"; };
 		9D86E0B11CC3356E00342202 /* WSNetworkManager+Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSNetworkManager+Device.m"; sourceTree = "<group>"; };
@@ -224,8 +227,8 @@
 		9D982C3C1CF1BD5800D547BA /* WSRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRegViewController.m; sourceTree = "<group>"; };
 		9D982C3E1CF1C1DC00D547BA /* returnArrowBtn_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "returnArrowBtn_black@2x.png"; sourceTree = "<group>"; };
 		9D982C3F1CF1C1DC00D547BA /* returnArrowBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "returnArrowBtn@2x.png"; sourceTree = "<group>"; };
-		9D982C421CF1E19C00D547BA /* WSAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAboutUsViewController.h; sourceTree = "<group>"; };
-		9D982C431CF1E19C00D547BA /* WSAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAboutUsViewController.m; sourceTree = "<group>"; };
+		9D982C421CF1E19C00D547BA /* WSAboutUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAboutUserViewController.h; sourceTree = "<group>"; };
+		9D982C431CF1E19C00D547BA /* WSAboutUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAboutUserViewController.m; sourceTree = "<group>"; };
 		9D982C441CF1E19C00D547BA /* WSFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedBackViewController.h; sourceTree = "<group>"; };
 		9D982C451CF1E19C00D547BA /* WSFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedBackViewController.m; sourceTree = "<group>"; };
 		9D982C461CF1E19C00D547BA /* WSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSettingViewController.h; sourceTree = "<group>"; };
@@ -404,6 +407,15 @@
 				9D6FEE7E1CA3E897006DF0D6 /* MJRefreshStateHeader.m */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		9D78E71F1CF931CC005A2E94 /* EGOCache */ = {
+			isa = PBXGroup;
+			children = (
+				9D78E7201CF931CC005A2E94 /* EGOCache.h */,
+				9D78E7211CF931CC005A2E94 /* EGOCache.m */,
+			);
+			path = EGOCache;
 			sourceTree = "<group>";
 		};
 		9D86E0B31CC350DB00342202 /* Error */ = {
@@ -638,8 +650,8 @@
 		9D90EF1D1CA28BC400D79769 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9D982C421CF1E19C00D547BA /* WSAboutUsViewController.h */,
-				9D982C431CF1E19C00D547BA /* WSAboutUsViewController.m */,
+				9D982C421CF1E19C00D547BA /* WSAboutUserViewController.h */,
+				9D982C431CF1E19C00D547BA /* WSAboutUserViewController.m */,
 				9D982C441CF1E19C00D547BA /* WSFeedBackViewController.h */,
 				9D982C451CF1E19C00D547BA /* WSFeedBackViewController.m */,
 				9D982C461CF1E19C00D547BA /* WSSettingViewController.h */,
@@ -713,6 +725,7 @@
 		9D90EF261CA28BD000D79769 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				9D78E71F1CF931CC005A2E94 /* EGOCache */,
 				9D91FC4B1CE8163700D9798D /* ToolsObject */,
 				9D24898F1CC50E01005DB5E7 /* OpenUDID */,
 				9D6FEE5C1CA3E896006DF0D6 /* MJRefresh */,
@@ -1126,12 +1139,13 @@
 				9D2489941CC50E39005DB5E7 /* README.md in Sources */,
 				9D6FEE8D1CA3E897006DF0D6 /* MJRefreshHeader.m in Sources */,
 				9D90EF691CA2A1DE00D79769 /* WSTableView.m in Sources */,
+				9D78E7221CF931CC005A2E94 /* EGOCache.m in Sources */,
 				9D24899C1CC50ECE005DB5E7 /* WSDataCenter+User.m in Sources */,
 				9D6FEE991CA3E897006DF0D6 /* UIScrollView+MJExtension.m in Sources */,
 				9D6FEE941CA3E897006DF0D6 /* MJRefreshGifHeader.m in Sources */,
 				9D6FEE8B1CA3E897006DF0D6 /* MJRefreshComponent.m in Sources */,
 				9D90EF4B1CA2904800D79769 /* TaskViewController.m in Sources */,
-				9D982C481CF1E19C00D547BA /* WSAboutUsViewController.m in Sources */,
+				9D982C481CF1E19C00D547BA /* WSAboutUserViewController.m in Sources */,
 				9D6FEE8F1CA3E897006DF0D6 /* MJRefreshAutoNormalFooter.m in Sources */,
 				9D2489A51CC50EFB005DB5E7 /* DeviceModel.m in Sources */,
 				9D90EF4E1CA2905600D79769 /* DeviceViewController.m in Sources */,
@@ -1258,7 +1272,7 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/WhatSmart/Main";
 				INFOPLIST_FILE = WhatSmart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.WhatSmart.WhatSmart;
+				PRODUCT_BUNDLE_IDENTIFIER = org.whatsmart.smartappdly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1275,7 +1289,7 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/WhatSmart/Main";
 				INFOPLIST_FILE = WhatSmart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.WhatSmart.WhatSmart;
+				PRODUCT_BUNDLE_IDENTIFIER = org.whatsmart.smartappdly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "MainTabBarController.h"
 #import "WSMainNavigationController.h"
+#import "WSDataCenter.h"
+#import "EGOCache.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +22,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self p_setStartParameter];
+    });
 
     MainTabBarController * mainVC = [[MainTabBarController alloc] init];
     
@@ -43,6 +50,9 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    if ([[WSDataCenter shareDataCenter].currentUser loginType] != UserLoginTypeLogout) {
+        [[WSDataCenter shareDataCenter] autoLogin];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -133,6 +143,14 @@
             abort();
         }
     }
+}
+
+/**
+ *  设置启动参数
+ */
+- (void)p_setStartParameter{
+    
+    [WSDataCenter shareDataCenter].currentUser = (CurrentUserModel*)[[EGOCache globalCache] objectForKey:kCacheUserInfo];
 }
 
 @end

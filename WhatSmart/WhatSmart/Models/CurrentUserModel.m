@@ -37,5 +37,9 @@
     }
     return self;
 }
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"name:%@, token:%@, group:%@, expired:%@, userId:%@, permission:%@",self.name,self.token,self.group,self.expired,self.userId,self.permission];
+}
 
 @end

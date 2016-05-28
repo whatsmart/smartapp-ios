@@ -17,10 +17,28 @@
     
     DLog(@"注册用户......");
     [client invokeMethod:@"register_user" withParameters:@{@"username":name,@"password":password} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        completion(YES,nil);
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            self.currentUser.name = name;
+            self.currentUser.group = [responseObject valueForKey:@"group"];
+            self.currentUser.userId = [responseObject valueForKey:@"id"];
+            self.currentUser.token = [responseObject valueForKey:@"token"];
+            self.currentUser.permission = [responseObject valueForKey:@"permission"] ;
+            self.currentUser.loginType = UserLoginTypeWS;
+            [[EGOCache globalCache]setObject:self.currentUser forKey:kCacheUserInfo];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:RegistUserNotifacationName object:@(YES)];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:@(YES)];
+        }else{
+            NSString *desc = [responseObject valueForKey:@"error"];
+            if(desc.length == 0 ){
+                desc = @"注册失败";
+            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:RegistUserNotifacationName object:@(NO) userInfo:@{@"desc":desc}];
+        }
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"错误：注册用户失败!错误信息：%@",error);
-        completion(NO,error);
+        [[NSNotificationCenter defaultCenter] postNotificationName:RegistUserNotifacationName object:@(NO) userInfo:@{@"desc":@"网络连接失败"}];
     }];
 }
 
@@ -30,6 +48,8 @@
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     
     DLog(@"登录用户......");
+//    client.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
     [client invokeMethod:@"login" withParameters:@{@"username":name,@"password":password} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        completion(YES,nil);
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
@@ -39,50 +59,74 @@
                 self.currentUser.token = [responseObject valueForKey:@"token"];
                 self.currentUser.permission = [responseObject valueForKey:@"permission"] ;
                 self.currentUser.loginType = UserLoginTypeWS;
-            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
+            [[EGOCache globalCache]setObject:self.currentUser forKey:kCacheUserInfo];
+
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:@(YES) userInfo:@{@"status":@YES}];
 
         }else{
-            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@NO}];
+            NSString *desc = [responseObject valueForKey:@"error"];
+            if(desc.length == 0 ){
+                desc = @"登录失败";
+            }
+
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:@(NO) userInfo:@{@"desc":desc}];
         }
         
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"错误：登录用户失败!错误信息：%@",error);
 //        completion(NO,error);
-        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@NO}];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:@(NO) userInfo:@{@"desc":@"网络连接失败"}];
 
     }];
 }
+/**
+ *  自动登录
+ */
+- (void)autoLogin{
+    
+    if (self.currentUser.loginType == UserLoginTypeLogout) {
+        return;
+    }
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:[WSURL UserUrl]]];
+    [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
+    
+    DLog(@"登录用户......");
+    //    client.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [client invokeMethod:@"login" withParameters:@{@"username":self.currentUser.name,@"password":@""} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //        completion(YES,nil);
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            self.currentUser.group = [responseObject valueForKey:@"group"];
+            self.currentUser.userId = [responseObject valueForKey:@"id"];
+            self.currentUser.token = [responseObject valueForKey:@"token"];
+            self.currentUser.permission = [responseObject valueForKey:@"permission"] ;
+            self.currentUser.loginType = UserLoginTypeWS;
+            [[EGOCache globalCache]setObject:self.currentUser forKey:kCacheUserInfo withTimeoutInterval:MAXFLOAT];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
+            
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@NO}];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"错误：登录用户失败!错误信息：%@",error);
+        //        completion(NO,error);
+        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@NO}];
+        
+    }];
+}
+
 
 - (void) Logout:(void(^)(BOOL isSuccess, NSError* error)) completion
 {
     AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:[WSURL UserUrl]]];
-    [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
+//    [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     [client.requestSerializer setValue:[WSDataCenter shareDataCenter].currentUser.token forHTTPHeaderField:@"Auth-token"];
 
     DLog(@"注销用户......");
-    [client invokeMethod:@"logout" success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            self.currentUser.name = nil;
-            self.currentUser.group = nil;
-            self.currentUser.userId = nil;
-            self.currentUser.token = nil;
-            self.currentUser.permission = nil;
-            self.currentUser.loginType = UserLoginTypeLogout;
-            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil];
-            
-        }else{
-            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"错误：注销用户失败!错误信息：%@",error);
-        //        completion(NO,error);
-        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
-        
-    }];
-//    [client invokeMethod:@"logout" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        //        completion(YES,nil);
+//    [client invokeMethod:@"logout" success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        if ([responseObject isKindOfClass:[NSDictionary class]]) {
 //            self.currentUser.name = nil;
 //            self.currentUser.group = nil;
@@ -96,13 +140,36 @@
 //            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
 //        }
 //        
-//        
 //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        DLog(@"错误：注销用户失败!错误信息：%@",error);
 //        //        completion(NO,error);
 //        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
 //        
 //    }];
+
+    [client invokeMethod:@"logout" withParameters:nil requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //        completion(YES,nil);
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            self.currentUser.name = nil;
+            self.currentUser.group = nil;
+            self.currentUser.userId = nil;
+            self.currentUser.token = nil;
+            self.currentUser.permission = nil;
+            self.currentUser.loginType = UserLoginTypeLogout;
+            [[EGOCache globalCache]setObject:self.currentUser forKey:kCacheUserInfo];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil];
+            
+        }else{
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"错误：注销用户失败!错误信息：%@",error);
+        //        completion(NO,error);
+        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
+        
+    }];
 }
 
 

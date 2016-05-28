@@ -12,7 +12,7 @@
 #import "WSNormalTableViewCell.h"
 #import "WSDataCenter.h"
 #import "UIButton+Block.h"
-#import "WSAboutUsViewController.h"
+#import "WSAboutUserViewController.h"
 #import "WSFeedBackViewController.h"
 
 @interface WSSettingViewController () <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
@@ -29,7 +29,7 @@ static NSString *const reuseIdentifier = @"settingCell";
 
 - (NSArray *)titleArray {
     if (!_titleArray) {
-        _titleArray = @[@"关于我们",@"意见反馈",@"联系客服"];
+        _titleArray = @[@"关于我们",@"意见反馈",@"联系客服",@"修改密码"];
     }
     return _titleArray;
 }
@@ -112,7 +112,7 @@ static NSString *const reuseIdentifier = @"settingCell";
     switch (indexPath.row) {
         case 0:
         {
-            WSAboutUsViewController * aboutVC = [[WSAboutUsViewController alloc]init];
+            WSAboutUserViewController * aboutVC = [[WSAboutUserViewController alloc]init];
             [APPLICATION_DELEGATE.rootNavController pushViewController:aboutVC animated:YES];
         }
             break;
@@ -126,6 +126,12 @@ static NSString *const reuseIdentifier = @"settingCell";
         {
             UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"客服QQ" message:CUSTOMER_SERVICE_QQ delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"复制QQ", nil];
             alert.delegate = self;
+            [alert show];
+            break;
+        }
+        case 3:
+        {
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"" message:@"程序员正在开发中..." delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
         }
             break;
