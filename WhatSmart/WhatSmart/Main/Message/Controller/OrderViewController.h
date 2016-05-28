@@ -1,5 +1,5 @@
 //
-//  MessageViewController.h
+//  OrderViewController.h
 //  WhatSmart
 //
 //  Created by 董力云 on 16/3/23.
@@ -8,6 +8,6 @@
 
 #import "WSViewController.h"
 
-@interface MessageViewController : WSViewController
+@interface OrderViewController : WSViewController
 
 @end

@@ -9,7 +9,7 @@
 #import "MainTabBarController.h"
 #import "TaskViewController.h"
 #import "DeviceViewController.h"
-#import "MessageViewController.h"
+#import "OrderViewController.h"
 #import "WSSettingViewController.h"
 #import "WSNavigationController.h"
 #import "WSUserCenterViewController.h"
@@ -18,7 +18,7 @@
 
 @property(nonatomic,strong) TaskViewController *    taskVC;
 @property(nonatomic,strong) DeviceViewController *  deviceVC;
-@property(nonatomic,strong) MessageViewController * messageVC;
+@property(nonatomic,strong) OrderViewController * messageVC;
 @property(nonatomic,strong) WSUserCenterViewController *      meVC;
 @property(nonatomic,strong) WSSettingViewController*  settingVC;
 
@@ -38,7 +38,7 @@
     _deviceVC = [[DeviceViewController alloc] init];
     _deviceVC.title = Title_Device;
     
-    _messageVC = [[MessageViewController alloc] init];
+    _messageVC = [[OrderViewController alloc] init];
 //    _messageVC.title = Title_Message;
     _messageVC.navigationItem.title = Title_Message;
     _meVC = [[WSUserCenterViewController alloc] init];

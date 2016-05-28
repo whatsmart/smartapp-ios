@@ -36,6 +36,8 @@
 		9D6FEE9A1CA3E897006DF0D6 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FEE861CA3E897006DF0D6 /* UIScrollView+MJRefresh.m */; };
 		9D6FEE9B1CA3E897006DF0D6 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FEE881CA3E897006DF0D6 /* UIView+MJExtension.m */; };
 		9D78E7221CF931CC005A2E94 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E7211CF931CC005A2E94 /* EGOCache.m */; };
+		9D78E72B1CF95DD1005A2E94 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E72A1CF95DD1005A2E94 /* OrderTableViewCell.m */; };
+		9D78E72E1CF9687E005A2E94 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E72D1CF9687E005A2E94 /* OrderModel.m */; };
 		9D86E0AC1CC332F300342202 /* WSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0AB1CC332F300342202 /* WSNetworkManager.m */; };
 		9D86E0B21CC3356E00342202 /* WSNetworkManager+Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0B11CC3356E00342202 /* WSNetworkManager+Device.m */; };
 		9D86E0B61CC3513500342202 /* WSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0B51CC3513500342202 /* WSError.m */; };
@@ -52,7 +54,7 @@
 		9D90EF481CA2900F00D79769 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF471CA2900F00D79769 /* MainTabBarController.m */; };
 		9D90EF4B1CA2904800D79769 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF4A1CA2904800D79769 /* TaskViewController.m */; };
 		9D90EF4E1CA2905600D79769 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF4D1CA2905600D79769 /* DeviceViewController.m */; };
-		9D90EF511CA2906100D79769 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF501CA2906100D79769 /* MessageViewController.m */; };
+		9D90EF511CA2906100D79769 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D90EF501CA2906100D79769 /* OrderViewController.m */; };
 		9D90EF5C1CA295F900D79769 /* money_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D90EF5B1CA295F900D79769 /* money_hl@2x.png */; };
 		9D90EF5E1CA2960300D79769 /* money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D90EF5D1CA2960300D79769 /* money@2x.png */; };
 		9D90EF601CA2960F00D79769 /* my_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D90EF5F1CA2960F00D79769 /* my_hl@2x.png */; };
@@ -153,6 +155,10 @@
 		9D6FEE881CA3E897006DF0D6 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		9D78E7201CF931CC005A2E94 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		9D78E7211CF931CC005A2E94 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		9D78E7291CF95DD1005A2E94 /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableViewCell.h; sourceTree = "<group>"; };
+		9D78E72A1CF95DD1005A2E94 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableViewCell.m; sourceTree = "<group>"; };
+		9D78E72C1CF9687E005A2E94 /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
+		9D78E72D1CF9687E005A2E94 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		9D86E0AA1CC332F300342202 /* WSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNetworkManager.h; sourceTree = "<group>"; };
 		9D86E0AB1CC332F300342202 /* WSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNetworkManager.m; sourceTree = "<group>"; };
 		9D86E0B11CC3356E00342202 /* WSNetworkManager+Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSNetworkManager+Device.m"; sourceTree = "<group>"; };
@@ -182,8 +188,8 @@
 		9D90EF4A1CA2904800D79769 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		9D90EF4C1CA2905600D79769 /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceViewController.h; path = Controller/DeviceViewController.h; sourceTree = "<group>"; };
 		9D90EF4D1CA2905600D79769 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceViewController.m; path = Controller/DeviceViewController.m; sourceTree = "<group>"; };
-		9D90EF4F1CA2906100D79769 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		9D90EF501CA2906100D79769 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		9D90EF4F1CA2906100D79769 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		9D90EF501CA2906100D79769 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		9D90EF581CA2919100D79769 /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
 		9D90EF591CA2926900D79769 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9D90EF5B1CA295F900D79769 /* money_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_hl@2x.png"; sourceTree = "<group>"; };
@@ -312,6 +318,8 @@
 				9D2489A11CC50EFB005DB5E7 /* DeviceModel.m */,
 				9D2489A21CC50EFB005DB5E7 /* UserModel.h */,
 				9D2489A31CC50EFB005DB5E7 /* UserModel.m */,
+				9D78E72C1CF9687E005A2E94 /* OrderModel.h */,
+				9D78E72D1CF9687E005A2E94 /* OrderModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -496,49 +504,14 @@
 				9D90EF751CA2A81000D79769 /* WSDeviceTableViewCell.h */,
 				9D90EF761CA2A81000D79769 /* WSDeviceTableViewCell.m */,
 				9D982C1C1CF1587300D547BA /* DeviceViewController+SettingView.m */,
-				9D90EF0D1CA28BC400D79769 /* Controller */,
-				9D90EF0E1CA28BC400D79769 /* Model */,
-				9D90EF0F1CA28BC400D79769 /* Other */,
-				9D90EF101CA28BC400D79769 /* View */,
 			);
 			path = Device;
-			sourceTree = "<group>";
-		};
-		9D90EF0D1CA28BC400D79769 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		9D90EF0E1CA28BC400D79769 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9D90EF0F1CA28BC400D79769 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		9D90EF101CA28BC400D79769 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9D90EF111CA28BC400D79769 /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				9D90EF121CA28BC400D79769 /* Controller */,
-				9D90EF131CA28BC400D79769 /* Model */,
-				9D90EF141CA28BC400D79769 /* Other */,
-				9D90EF151CA28BC400D79769 /* View */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -560,34 +533,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		9D90EF131CA28BC400D79769 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9D90EF141CA28BC400D79769 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		9D90EF151CA28BC400D79769 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		9D90EF161CA28BC400D79769 /* Message */ = {
 			isa = PBXGroup;
 			children = (
 				9D90EF171CA28BC400D79769 /* Controller */,
-				9D90EF181CA28BC400D79769 /* Model */,
-				9D90EF191CA28BC400D79769 /* Other */,
-				9D90EF1A1CA28BC400D79769 /* View */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -595,31 +544,12 @@
 		9D90EF171CA28BC400D79769 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9D90EF4F1CA2906100D79769 /* MessageViewController.h */,
-				9D90EF501CA2906100D79769 /* MessageViewController.m */,
+				9D90EF4F1CA2906100D79769 /* OrderViewController.h */,
+				9D90EF501CA2906100D79769 /* OrderViewController.m */,
+				9D78E7291CF95DD1005A2E94 /* OrderTableViewCell.h */,
+				9D78E72A1CF95DD1005A2E94 /* OrderTableViewCell.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		9D90EF181CA28BC400D79769 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9D90EF191CA28BC400D79769 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		9D90EF1A1CA28BC400D79769 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9D90EF1B1CA28BC400D79769 /* Other */ = {
@@ -640,9 +570,6 @@
 			isa = PBXGroup;
 			children = (
 				9D90EF1D1CA28BC400D79769 /* Controller */,
-				9D90EF1E1CA28BC400D79769 /* Model */,
-				9D90EF1F1CA28BC400D79769 /* Other */,
-				9D90EF201CA28BC400D79769 /* View */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -658,27 +585,6 @@
 				9D982C471CF1E19C00D547BA /* WSSettingViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		9D90EF1E1CA28BC400D79769 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9D90EF1F1CA28BC400D79769 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		9D90EF201CA28BC400D79769 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9D90EF211CA28BC400D79769 /* Task */ = {
@@ -1127,10 +1033,11 @@
 				9D90EF391CA28D6F00D79769 /* WSNavigationController.m in Sources */,
 				9D6FEE8E1CA3E897006DF0D6 /* MJRefreshAutoGifFooter.m in Sources */,
 				9D86E0AC1CC332F300342202 /* WSNetworkManager.m in Sources */,
+				9D78E72E1CF9687E005A2E94 /* OrderModel.m in Sources */,
 				9D6FEE901CA3E897006DF0D6 /* MJRefreshAutoStateFooter.m in Sources */,
 				9D90EEFF1CA287B100D79769 /* WhatSmart.xcdatamodeld in Sources */,
 				9D982C3D1CF1BD5800D547BA /* WSRegViewController.m in Sources */,
-				9D90EF511CA2906100D79769 /* MessageViewController.m in Sources */,
+				9D90EF511CA2906100D79769 /* OrderViewController.m in Sources */,
 				9D6FEE891CA3E897006DF0D6 /* MJRefreshAutoFooter.m in Sources */,
 				9D90EEF61CA287B100D79769 /* AppDelegate.m in Sources */,
 				9D6FEE911CA3E897006DF0D6 /* MJRefreshBackGifFooter.m in Sources */,
@@ -1162,6 +1069,7 @@
 				9D982C271CF1AD9300D547BA /* WSUserCenterHeadView.m in Sources */,
 				9D982C4A1CF1E19C00D547BA /* WSSettingViewController.m in Sources */,
 				9D6FEE8A1CA3E897006DF0D6 /* MJRefreshBackFooter.m in Sources */,
+				9D78E72B1CF95DD1005A2E94 /* OrderTableViewCell.m in Sources */,
 				9D24899A1CC50ECE005DB5E7 /* WSDataCenter.m in Sources */,
 				9D90EF771CA2A81000D79769 /* WSDeviceTableViewCell.m in Sources */,
 			);
