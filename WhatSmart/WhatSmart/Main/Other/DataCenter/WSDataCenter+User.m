@@ -16,7 +16,7 @@
     [client.requestSerializer setValue:[OpenUDID value] forHTTPHeaderField:@"device-id"];
     
     DLog(@"注册用户......");
-    [client invokeMethod:@"register_user" withParameters:@{@"username":name,@"password":password} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [client invokeMethod:@"add_user" withParameters:@{@"username":name,@"password":password} requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             self.currentUser.name = name;
             self.currentUser.group = [responseObject valueForKey:@"group"];
@@ -59,9 +59,10 @@
                 self.currentUser.token = [responseObject valueForKey:@"token"];
                 self.currentUser.permission = [responseObject valueForKey:@"permission"] ;
                 self.currentUser.loginType = UserLoginTypeWS;
+            
             [[EGOCache globalCache]setObject:self.currentUser forKey:kCacheUserInfo];
 
-            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:@(YES) userInfo:@{@"status":@YES}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
 
         }else{
             NSString *desc = [responseObject valueForKey:@"error"];
@@ -76,7 +77,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"错误：登录用户失败!错误信息：%@",error);
 //        completion(NO,error);
-        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:@(NO) userInfo:@{@"desc":@"网络连接失败"}];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:@(NO) userInfo:@{@"desc":[error.userInfo objectForKey:@"NSLocalizedDescription"]}];
 
     }];
 }
@@ -157,7 +159,7 @@
             self.currentUser.permission = nil;
             self.currentUser.loginType = UserLoginTypeLogout;
             [[EGOCache globalCache]setObject:self.currentUser forKey:kCacheUserInfo];
-            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@NO}];
             
         }else{
             [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
@@ -167,6 +169,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"错误：注销用户失败!错误信息：%@",error);
         //        completion(NO,error);
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:LoginStateRefreshed object:nil userInfo:@{@"status":@YES}];
         
     }];

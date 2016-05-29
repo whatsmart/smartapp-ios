@@ -62,6 +62,7 @@
         make.top.equalTo(versionLabel.mas_bottom).offset(15);
         make.left.equalTo(versionLabel);
     }];
+    [webSiteLabel setHidden:YES];
     
     //客服QQ
     UILabel *QQLabel = [UILabel new];

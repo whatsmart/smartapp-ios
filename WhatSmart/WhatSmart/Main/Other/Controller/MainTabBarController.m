@@ -10,7 +10,6 @@
 #import "TaskViewController.h"
 #import "DeviceViewController.h"
 #import "OrderViewController.h"
-#import "WSSettingViewController.h"
 #import "WSNavigationController.h"
 #import "WSUserCenterViewController.h"
 
@@ -20,7 +19,6 @@
 @property(nonatomic,strong) DeviceViewController *  deviceVC;
 @property(nonatomic,strong) OrderViewController * messageVC;
 @property(nonatomic,strong) WSUserCenterViewController *      meVC;
-@property(nonatomic,strong) WSSettingViewController*  settingVC;
 
 
 
@@ -40,13 +38,9 @@
     
     _messageVC = [[OrderViewController alloc] init];
 //    _messageVC.title = Title_Message;
-    _messageVC.navigationItem.title = Title_Message;
+    _messageVC.title = Title_Message;
     _meVC = [[WSUserCenterViewController alloc] init];
     _meVC.title = Title_Me;
-    
-    _settingVC = [[WSSettingViewController alloc] init];
-    _settingVC.title = Title_Setting;
-    
     
     WSNavigationController * navTask = [[WSNavigationController alloc] initWithRootView:_taskVC withBarImage:@"prize" withBarSeletedImage:@"prize_hl"];
     
@@ -56,10 +50,8 @@
     
     WSNavigationController * navMe = [[WSNavigationController alloc] initWithRootView:_meVC withBarImage:@"money" withBarSeletedImage:@"money_hl"];
     
-    WSNavigationController * navSetting = [[WSNavigationController alloc] initWithRootView:_settingVC withBarImage:@"my" withBarSeletedImage:@"my_hl"];
-    
-    self.viewControllers = @[navTask,navDevice,navMessage,navMe,navSetting];
-    self.selectedIndex = 2;
+    self.viewControllers = @[navMessage,navDevice,navTask,navMe];
+    self.selectedIndex = 0;
 
     
 }

@@ -37,4 +37,7 @@
 //是否需要解码优化（性能比较差的机型需要解码优化）
 + (BOOL)isNeedOptimizingWhenDecodeing;
 
++ (void) setGateway:(NSString *) ip;
+
+
 @end

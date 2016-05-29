@@ -36,19 +36,24 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
 -(void)setupView
 {
     //命令列表
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-90)];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH-100)];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.backgroundColor = self.view.backgroundColor;
+    tableView.backgroundColor = UIColorFromHex(0xf0f0f0);
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
     //底部输入部分
-    UIView * bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenH-90, kScreenW, 40)];
-    bottomView.backgroundColor = UIColorFromHex(0xf0f0f0);
+    UIView * bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenH-100, kScreenW, 50)];
+    bottomView.backgroundColor = [UIColor whiteColor] ;
     self.inputBottomView = bottomView;
+    
+    UIView * lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, bottomView.width, 1)];
+    lineView.backgroundColor =  RGBColor(236, 236, 236);
+    [self.inputBottomView addSubview:lineView];
+    
     //语音
-    UIButton * voiceButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 45, 30)];
+    UIButton * voiceButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 50, 40)];
     voiceButton.backgroundColor = WSColor;
     [voiceButton setTitle:@"语音" forState:UIControlStateNormal];
     voiceButton.layer.cornerRadius = 5;
@@ -58,9 +63,9 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
     }];
     [self.inputBottomView addSubview:voiceButton];
     //命令输入框
-    UITextField * OrderTextField = [[UITextField alloc] initWithFrame:CGRectMake(voiceButton.right+5, 5, kScreenW- 35 -35 , 30)];
+    UITextField * OrderTextField = [[UITextField alloc] initWithFrame:CGRectMake(voiceButton.right+5, 5, kScreenW-voiceButton.width-10 , 40)];
     OrderTextField.layer.cornerRadius = 5;
-    OrderTextField.layer.borderColor = [UIColor grayColor].CGColor;
+    OrderTextField.layer.borderColor =  RGBColor(236, 236, 236).CGColor;
     OrderTextField.layer.borderWidth = 1;
     OrderTextField.placeholder = @"主人，请输入命令！";
     OrderTextField.returnKeyType = UIReturnKeyDone;
@@ -111,8 +116,8 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:.2];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-    [self.tableView setFrame:CGRectMake(0, self.tableView.top - keyboardSize.height,_tableView.width, _tableView.height)];
-    [self.inputBottomView setFrame:CGRectMake(0,_inputBottomView.top - keyboardSize.height, kScreenW, 40)];
+    [self.tableView setFrame:CGRectMake(0, self.tableView.top - 220,_tableView.width, _tableView.height)];
+    [self.inputBottomView setFrame:CGRectMake(0,_inputBottomView.top - 220, kScreenW, _inputBottomView.height)];
 
     [UIView commitAnimations];
     
@@ -130,7 +135,7 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
     [UIView setAnimationDuration:.2];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     [self.tableView setFrame:CGRectMake(0, 0,_tableView.width, _tableView.height)];
-    [self.inputBottomView setFrame:CGRectMake(0, kScreenH-90, kScreenW, 40)];
+    [self.inputBottomView setFrame:CGRectMake(0, _inputBottomView.top+220, kScreenW, _inputBottomView.height)];
 
     [UIView commitAnimations];
     

@@ -35,8 +35,8 @@
     //设置cell内容
     NSString * title = [NSString stringWithFormat:@"%@(%@)",model.name,model.position];
     self.textLabel.text = title;
-    if (model.status) {
-        NSMutableString * str = [[NSMutableString alloc] initWithFormat:@"状态：%@ 亮度:%@", model.status.power, model.status.brightness];
+    if (model.state) {
+        NSMutableString * str = [[NSMutableString alloc] initWithFormat:@"状态：%@ 亮度:%@", model.state.power, model.state.brightness];
         self.detailTextLabel.text = str;
     }
     [self.imageView setImage:[WSToolsObject loadImageWithName:@"device_lighting.png"]];

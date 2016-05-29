@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DeviceStatus : NSObject
+@interface DeviceState : NSObject
 
 @property (nonatomic,strong) NSString * power ;
 @property (nonatomic,assign) NSNumber * color ;
@@ -43,7 +43,7 @@
 @property (nonatomic,strong) NSString * swversion ;
 @property (nonatomic,strong) NSString * type ;
 @property (nonatomic,strong) NSArray * operations ;
-@property (nonatomic,strong) DeviceStatus * status ;
+@property (nonatomic,strong) DeviceState * state ;
 
 - (DeviceModel *) initWithDic:(NSDictionary *) dic;
 @end

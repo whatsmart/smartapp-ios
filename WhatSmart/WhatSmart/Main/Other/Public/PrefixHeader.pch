@@ -19,6 +19,9 @@
 #import "WSDataCenter.h"
 #import "UIViewAdditions.h"
 #import "UIButton+block.h"
+#import "WSButton.h"
+#import "WSGateway.h"
+
 
 #import <MBProgressHUD.h>
 #import <UIViewController+MBProgressHUD.h>

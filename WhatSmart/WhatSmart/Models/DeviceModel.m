@@ -8,7 +8,7 @@
 
 #import "DeviceModel.h"
 
-@implementation DeviceStatus
+@implementation DeviceState
 
 -(instancetype) init
 {
@@ -50,10 +50,10 @@
             self.swversion = [dic objectForKey:@"swversion"];
             self.type = [dic objectForKey:@"type"];
             self.operations = [dic objectForKey:@"operations"];
-            self.status = [[DeviceStatus alloc] init];
-            self.status.power = [[dic objectForKey:@"status"] objectForKey:@"power"];
-            self.status.color = [[dic objectForKey:@"status"] objectForKey:@"color"];
-            self.status.brightness = [[dic objectForKey:@"status"] objectForKey:@"brightness"];
+            self.state = [[DeviceState alloc] init];
+            self.state.power = [[dic objectForKey:@"state"] objectForKey:@"power"];
+            self.state.color = [[dic objectForKey:@"state"] objectForKey:@"color"];
+            self.state.brightness = [[dic objectForKey:@"state"] objectForKey:@"brightness"];
         }
         return self;
     }

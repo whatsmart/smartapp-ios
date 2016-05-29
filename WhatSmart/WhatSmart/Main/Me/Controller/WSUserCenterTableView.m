@@ -13,6 +13,8 @@
 #import "MBProgressHUD+WS.h"
 #import "MJRefresh.h"
 #import "WSSettingViewController.h"
+#import "WSSettingGateway.h"
+
 
 typedef NS_ENUM(NSUInteger, UserCenterSection) {
     UserCenterSectionOne = 0,
@@ -96,7 +98,7 @@ static NSString *const titleKey = @"title";
     WSNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
 
     cell.imageView.image = [UIImage imageNamed:@""];
-    cell.textLabel.text = @"xxx";
+    cell.textLabel.text = @"修改网关";
     cell.textLabel.textColor = RGBColor(0x4c, 0x4c, 0x4c);
     cell.textLabel.font = [UIFont systemFontOfSize:15];
     if (indexPath.row == 1) {
@@ -122,6 +124,11 @@ static NSString *const titleKey = @"title";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        WSSettingGateway * gatewayVC = [[WSSettingGateway alloc] init];
+        gatewayVC.hidesBottomBarWhenPushed = YES;
+        [APPLICATION_DELEGATE.rootNavController pushViewController:gatewayVC animated:YES];
+    }
     if (indexPath.row == 1) {
         WSSettingViewController * setVc = [[WSSettingViewController alloc] init];
         setVc.hidesBottomBarWhenPushed = YES;

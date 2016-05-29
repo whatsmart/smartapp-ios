@@ -38,6 +38,10 @@
 		9D78E7221CF931CC005A2E94 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E7211CF931CC005A2E94 /* EGOCache.m */; };
 		9D78E72B1CF95DD1005A2E94 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E72A1CF95DD1005A2E94 /* OrderTableViewCell.m */; };
 		9D78E72E1CF9687E005A2E94 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E72D1CF9687E005A2E94 /* OrderModel.m */; };
+		9D78E7311CFA98A9005A2E94 /* WSSettingGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E7301CFA98A9005A2E94 /* WSSettingGateway.m */; };
+		9D78E7341CFA9CDB005A2E94 /* WSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E7331CFA9CDB005A2E94 /* WSButton.m */; };
+		9D78E7371CFA9F94005A2E94 /* WSGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E7361CFA9F94005A2E94 /* WSGateway.m */; };
+		9D78E73A1CFAA338005A2E94 /* Gateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D78E7391CFAA338005A2E94 /* Gateway.m */; };
 		9D86E0AC1CC332F300342202 /* WSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0AB1CC332F300342202 /* WSNetworkManager.m */; };
 		9D86E0B21CC3356E00342202 /* WSNetworkManager+Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0B11CC3356E00342202 /* WSNetworkManager+Device.m */; };
 		9D86E0B61CC3513500342202 /* WSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E0B51CC3513500342202 /* WSError.m */; };
@@ -159,6 +163,14 @@
 		9D78E72A1CF95DD1005A2E94 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableViewCell.m; sourceTree = "<group>"; };
 		9D78E72C1CF9687E005A2E94 /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
 		9D78E72D1CF9687E005A2E94 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
+		9D78E72F1CFA98A9005A2E94 /* WSSettingGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSettingGateway.h; sourceTree = "<group>"; };
+		9D78E7301CFA98A9005A2E94 /* WSSettingGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSettingGateway.m; sourceTree = "<group>"; };
+		9D78E7321CFA9CDB005A2E94 /* WSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSButton.h; sourceTree = "<group>"; };
+		9D78E7331CFA9CDB005A2E94 /* WSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSButton.m; sourceTree = "<group>"; };
+		9D78E7351CFA9F94005A2E94 /* WSGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGateway.h; sourceTree = "<group>"; };
+		9D78E7361CFA9F94005A2E94 /* WSGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGateway.m; sourceTree = "<group>"; };
+		9D78E7381CFAA338005A2E94 /* Gateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gateway.h; sourceTree = "<group>"; };
+		9D78E7391CFAA338005A2E94 /* Gateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gateway.m; sourceTree = "<group>"; };
 		9D86E0AA1CC332F300342202 /* WSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNetworkManager.h; sourceTree = "<group>"; };
 		9D86E0AB1CC332F300342202 /* WSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNetworkManager.m; sourceTree = "<group>"; };
 		9D86E0B11CC3356E00342202 /* WSNetworkManager+Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSNetworkManager+Device.m"; sourceTree = "<group>"; };
@@ -302,6 +314,8 @@
 				FE5F37241CC6041A003A6188 /* WSDataCenter+BaseData.m */,
 				9D90EF6A1CA2A40D00D79769 /* WSURL.h */,
 				9D90EF6B1CA2A40D00D79769 /* WSURL.m */,
+				9D78E7351CFA9F94005A2E94 /* WSGateway.h */,
+				9D78E7361CFA9F94005A2E94 /* WSGateway.m */,
 			);
 			name = DataCenter;
 			path = Main/Other/DataCenter;
@@ -320,6 +334,8 @@
 				9D2489A31CC50EFB005DB5E7 /* UserModel.m */,
 				9D78E72C1CF9687E005A2E94 /* OrderModel.h */,
 				9D78E72D1CF9687E005A2E94 /* OrderModel.m */,
+				9D78E7381CFAA338005A2E94 /* Gateway.h */,
+				9D78E7391CFAA338005A2E94 /* Gateway.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -529,6 +545,8 @@
 				9D982C241CF1AD9300D547BA /* WSUserCenterTableView.m */,
 				9D982C251CF1AD9300D547BA /* WSUserCenterViewController.h */,
 				9D982C261CF1AD9300D547BA /* WSUserCenterViewController.m */,
+				9D78E72F1CFA98A9005A2E94 /* WSSettingGateway.h */,
+				9D78E7301CFA98A9005A2E94 /* WSSettingGateway.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -591,9 +609,6 @@
 			isa = PBXGroup;
 			children = (
 				9D90EF221CA28BC400D79769 /* Controller */,
-				9D90EF231CA28BC400D79769 /* Model */,
-				9D90EF241CA28BC400D79769 /* Other */,
-				9D90EF251CA28BC400D79769 /* View */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -605,27 +620,6 @@
 				9D90EF4A1CA2904800D79769 /* TaskViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		9D90EF231CA28BC400D79769 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9D90EF241CA28BC400D79769 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		9D90EF251CA28BC400D79769 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9D90EF261CA28BD000D79769 /* Vender */ = {
@@ -756,6 +750,8 @@
 				9D90EF441CA28FD800D79769 /* WSTabBarController.m */,
 				9D90EF671CA2A1DE00D79769 /* WSTableView.h */,
 				9D90EF681CA2A1DE00D79769 /* WSTableView.m */,
+				9D78E7321CFA9CDB005A2E94 /* WSButton.h */,
+				9D78E7331CFA9CDB005A2E94 /* WSButton.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1015,13 +1011,16 @@
 				9D86E0B21CC3356E00342202 /* WSNetworkManager+Device.m in Sources */,
 				9D6FEE961CA3E897006DF0D6 /* MJRefreshStateHeader.m in Sources */,
 				9D6FEE921CA3E897006DF0D6 /* MJRefreshBackNormalFooter.m in Sources */,
+				9D78E7341CFA9CDB005A2E94 /* WSButton.m in Sources */,
 				FE5F37281CC607CE003A6188 /* DeviceTableView.m in Sources */,
 				9D982C281CF1AD9300D547BA /* WSUserCenterTableView.m in Sources */,
 				9D6FEE8C1CA3E897006DF0D6 /* MJRefreshFooter.m in Sources */,
 				9D90EF451CA28FD800D79769 /* WSTabBarController.m in Sources */,
 				FE5F37251CC6041A003A6188 /* WSDataCenter+BaseData.m in Sources */,
+				9D78E7311CFA98A9005A2E94 /* WSSettingGateway.m in Sources */,
 				9D2489931CC50E39005DB5E7 /* OpenUDID.m in Sources */,
 				9D6FEE931CA3E897006DF0D6 /* MJRefreshBackStateFooter.m in Sources */,
+				9D78E73A1CFAA338005A2E94 /* Gateway.m in Sources */,
 				9D982C491CF1E19C00D547BA /* WSFeedBackViewController.m in Sources */,
 				FE5F373B1CC61CC4003A6188 /* UIButton+Block.m in Sources */,
 				9D982C201CF19AC600D547BA /* WSLoginViewController.m in Sources */,
@@ -1031,6 +1030,7 @@
 				9D90EF421CA28F7600D79769 /* WSTableViewController.m in Sources */,
 				9D982C331CF1B25100D547BA /* WSNormalTableViewCell.m in Sources */,
 				9D90EF391CA28D6F00D79769 /* WSNavigationController.m in Sources */,
+				9D78E7371CFA9F94005A2E94 /* WSGateway.m in Sources */,
 				9D6FEE8E1CA3E897006DF0D6 /* MJRefreshAutoGifFooter.m in Sources */,
 				9D86E0AC1CC332F300342202 /* WSNetworkManager.m in Sources */,
 				9D78E72E1CF9687E005A2E94 /* OrderModel.m in Sources */,

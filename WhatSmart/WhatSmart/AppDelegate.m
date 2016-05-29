@@ -33,6 +33,7 @@
 
     self.rootNavController = rootNavController;
     self.window.rootViewController = rootNavController;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -149,8 +150,11 @@
  *  设置启动参数
  */
 - (void)p_setStartParameter{
+    CurrentUserModel * user = (CurrentUserModel*)[[EGOCache globalCache] objectForKey:kCacheUserInfo];
+    if (user != nil) {
+        [WSDataCenter shareDataCenter].currentUser = user;
+    }
     
-    [WSDataCenter shareDataCenter].currentUser = (CurrentUserModel*)[[EGOCache globalCache] objectForKey:kCacheUserInfo];
 }
 
 @end

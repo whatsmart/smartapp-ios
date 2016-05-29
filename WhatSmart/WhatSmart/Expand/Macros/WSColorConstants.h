@@ -18,7 +18,7 @@
 
 #define RandomColor [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1.0]
 
-#define WSColor RGBColor(0x80,0x80,0xff)
+#define WSColor RGBColor(0x00,0x7f,0xff)
 
 
 //命名kXM

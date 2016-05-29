@@ -40,7 +40,7 @@
     [backView addSubview:powerLabel];
     
     UISwitch * powerSwith = [[UISwitch alloc] initWithFrame:CGRectMake(backView.width-20-60, powerLabel.top, 60, 20)];
-    [powerSwith setOnTintColor:UIColorFromHex(0x8080ff)];
+    [powerSwith setOnTintColor:WSColor];
     [powerSwith setOn:YES];
     [backView addSubview:powerSwith];
     
@@ -53,8 +53,8 @@
     [backView addSubview:lightLabel];
     
     UISlider * lightSlider = [[UISlider alloc] initWithFrame:CGRectMake(lightLabel.right+20, lightLabel.top, powerSwith.right-(lightLabel.right+20), 10)];
-    [lightSlider setTintColor:UIColorFromHex(0x8080ff)];
-    [lightSlider setThumbTintColor:UIColorFromHex(0x6060ff)];
+    [lightSlider setTintColor:WSColor];
+    [lightSlider setThumbTintColor:WSColor];
     [lightSlider setMinimumValue:0];
     [lightSlider setMaximumValue:10];
     lightSlider.centerY = lightLabel.centerY;
@@ -65,7 +65,7 @@
     [backView addSubview:line];
     
     UIButton * okBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, line.bottom+30, backView.width-100, 40)];
-    [okBtn setBackgroundColor:UIColorFromHex(0x8080ff)];
+    [okBtn setBackgroundColor:WSColor];
     [okBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [okBtn.layer setCornerRadius:10];
     [okBtn setTitle:@"确定" forState:UIControlStateNormal];

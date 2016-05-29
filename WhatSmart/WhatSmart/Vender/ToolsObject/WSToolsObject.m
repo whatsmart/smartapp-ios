@@ -262,4 +262,9 @@
     return [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imageName ofType:type]];
 }
 
++ (void) setGateway:(NSString *) ip;
+{
+    
+}
+
 @end

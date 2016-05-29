@@ -48,6 +48,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.fatherVC createLightSettingViewWithModel:[_deviceArray objectAtIndex:indexPath.row]];
 
 }

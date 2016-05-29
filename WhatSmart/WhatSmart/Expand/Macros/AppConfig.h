@@ -12,8 +12,13 @@
 /**
  *  宏和字符串之间有且只能有一个空格！！！！！！！！！千万不要随便修改！！！！！！
  */
-#define KWSAPIHOSTURL @"http://121.42.156.167/jsonrpc/v1.0/"
+
+#define KGateWay @"http://121.42.156.167"
+//#define KWSAPIHOSTURL @"http://121.42.156.167/jsonrpc/v1.0/" // [KGateWay stringByAppendingString:@"/jsonrpc/v1.0/"]
+//
+
 
 #define kCacheUserInfo       @"CacheUserInfo"
+#define kCacheGateWay        @"CacheGateWay"
 
 #endif /* AppConfig_h */

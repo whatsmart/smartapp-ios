@@ -7,17 +7,19 @@
 //
 
 #import "WSURL.h"
-#define kAPI(s) [KWSAPIHOSTURL stringByAppendingString:(s)]
+
+#define  kHostUrl [[WSGateway shareGateway].gateway.content stringByAppendingString:@"/jsonrpc/v1.0/"]
+
+#define kAPI(s) [kHostUrl stringByAppendingString:(s)]
 
 @implementation WSURL
 
-#warning 请求设备列表
+//设备
 + (NSString*) DeviceList{return  kAPI(@"device"); }
 + (NSString*) DeviceWithId{return  kAPI(@"device/%@");}
 + (NSString*) ControlWithId{return kAPI(@"control/%@");}
-
+//用户
 + (NSString*) UserUrl{return kAPI(@"user");}
 + (NSString*) UserWithId{return kAPI(@"user/%@");}
-
 
 @end
