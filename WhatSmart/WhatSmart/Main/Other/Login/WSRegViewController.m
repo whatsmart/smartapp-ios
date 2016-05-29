@@ -153,7 +153,7 @@
     
     UIButton *regButton = [[UIButton alloc] init];
     regButton.layer.cornerRadius = 5;
-    regButton.backgroundColor = RGBColor(0xe8, 0x1f, 0x56);
+    regButton.backgroundColor = WSColor;
     regButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [regButton setTitle:@"注册" forState:UIControlStateNormal];
     [self.view addSubview:regButton];

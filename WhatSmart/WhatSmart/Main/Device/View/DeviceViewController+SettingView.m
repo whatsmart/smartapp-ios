@@ -55,7 +55,7 @@
     UISlider * lightSlider = [[UISlider alloc] initWithFrame:CGRectMake(lightLabel.right+20, lightLabel.top, powerSwith.right-(lightLabel.right+20), 10)];
     [lightSlider setTintColor:WSColor];
     [lightSlider setThumbTintColor:WSColor];
-    [lightSlider setMinimumValue:0];
+    [lightSlider setMinimumValue:1];
     [lightSlider setMaximumValue:10];
     lightSlider.centerY = lightLabel.centerY;
     [backView addSubview:lightSlider];
@@ -71,6 +71,7 @@
     [okBtn setTitle:@"确定" forState:UIControlStateNormal];
     [okBtn addActionHandler:^(NSInteger tag) {
         DLog(@"点击确定");
+        
     }];
     [backView addSubview:okBtn];
     

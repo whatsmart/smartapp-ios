@@ -153,7 +153,7 @@
     
     UIButton *loginButton = [[UIButton alloc] init];
     loginButton.layer.cornerRadius = 5;
-    loginButton.backgroundColor = RGBColor(0xe8, 0x1f, 0x56);
+    loginButton.backgroundColor = WSColor;
     loginButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [self.view addSubview:loginButton];
