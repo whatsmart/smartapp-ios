@@ -31,24 +31,28 @@
     // Do any additional setup after loading the view.
     
     _taskVC = [[TaskViewController alloc] init];
-    _taskVC.title = Title_Task;
+//    _taskVC.title = Title_Task;
+    _taskVC.navigationItem.title = Title_Task;
     
     _deviceVC = [[DeviceViewController alloc] init];
-    _deviceVC.title = Title_Device;
+//    _deviceVC.title = Title_Device;
+    _deviceVC.navigationItem.title = Title_Device;
     
     _messageVC = [[OrderViewController alloc] init];
+    _messageVC.navigationItem.title = Title_Message;
 //    _messageVC.title = Title_Message;
-    _messageVC.title = Title_Message;
+    
     _meVC = [[WSUserCenterViewController alloc] init];
-    _meVC.title = Title_Me;
+//    _meVC.title = Title_Me;
+    _meVC.navigationItem.title = Title_Me;
     
-    WSNavigationController * navTask = [[WSNavigationController alloc] initWithRootView:_taskVC withBarImage:@"prize" withBarSeletedImage:@"prize_hl"];
+    WSNavigationController * navTask = [[WSNavigationController alloc] initWithRootView:_taskVC withBarImage:@"task" withBarSeletedImage:@"task_active"];
     
-    WSNavigationController * navDevice = [[WSNavigationController alloc] initWithRootView:_deviceVC withBarImage:@"money" withBarSeletedImage:@"money_hl"];
+    WSNavigationController * navDevice = [[WSNavigationController alloc] initWithRootView:_deviceVC withBarImage:@"device" withBarSeletedImage:@"device_active"];
     
-    WSNavigationController * navMessage = [[WSNavigationController alloc] initWithRootView:_messageVC withBarImage:@"my" withBarSeletedImage:@"my_hl"];
+    WSNavigationController * navMessage = [[WSNavigationController alloc] initWithRootView:_messageVC withBarImage:@"msg" withBarSeletedImage:@"msg_active"];
     
-    WSNavigationController * navMe = [[WSNavigationController alloc] initWithRootView:_meVC withBarImage:@"money" withBarSeletedImage:@"money_hl"];
+    WSNavigationController * navMe = [[WSNavigationController alloc] initWithRootView:_meVC withBarImage:@"me" withBarSeletedImage:@"me_active"];
     
     self.viewControllers = @[navMessage,navDevice,navTask,navMe];
     self.selectedIndex = 0;

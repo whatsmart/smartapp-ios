@@ -58,6 +58,8 @@
     [lightSlider setMinimumValue:1];
     [lightSlider setMaximumValue:10];
     lightSlider.centerY = lightLabel.centerY;
+#warning 图片
+    [lightSlider setThumbImage:[UIImage imageNamed:@"grag_blue"] forState:UIControlStateNormal];
     [backView addSubview:lightSlider];
     
     UIView * line = [[UIView alloc] initWithFrame:CGRectMake(10, lightSlider.bottom+30, backView.width-20, 1)];
