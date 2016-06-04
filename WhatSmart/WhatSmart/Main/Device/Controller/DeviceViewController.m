@@ -87,7 +87,8 @@
 }
 -(void)footerAction
 {
-    
+    [self.tableView.mj_footer endRefreshing ];
+
 }
 #pragma mark 接收通知
 -(void) viewWillAppear:(BOOL)animated

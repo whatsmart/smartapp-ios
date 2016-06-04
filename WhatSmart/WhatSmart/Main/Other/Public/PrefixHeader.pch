@@ -9,6 +9,13 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#ifdef __OBJC__
+#import <MBProgressHUD.h>
+#import <UIViewController+MBProgressHUD.h>
+#import <POP.h>
+#import <Masonry.h>
+#import "EGOCache.h"
+
 #import "Title.h"
 #import "AppConfig.h"
 #import "WSColorConstants.h"
@@ -23,12 +30,6 @@
 #import "WSGateway.h"
 
 
-#import <MBProgressHUD.h>
-#import <UIViewController+MBProgressHUD.h>
-
-#import <POP.h>
-#import <Masonry.h>
-
-#import "EGOCache.h"
+#endif
 
 #endif /* PrefixHeader_pch */

@@ -21,7 +21,7 @@
 @end
 
 static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
-
+static NSInteger indexMsg = 0;
 
 @implementation OrderViewController
 
@@ -53,15 +53,18 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
     [self.inputBottomView addSubview:lineView];
     
     //语音
-    UIButton * voiceButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 50, 40)];
-    voiceButton.backgroundColor = WSColor;
-    [voiceButton setTitle:@"语音" forState:UIControlStateNormal];
+    UIView * voiceBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    voiceBackView.backgroundColor = [UIColor clearColor];
+    UIButton * voiceButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
+    voiceButton.backgroundColor = [UIColor clearColor];
+    [voiceButton setBackgroundImage:[UIImage imageNamed:@"voice"] forState:UIControlStateNormal];
     voiceButton.layer.cornerRadius = 5;
+    [voiceBackView addSubview:voiceButton];
     __weak __typeof(&*self)weakSelf = self;
     [voiceButton addActionHandler:^(NSInteger tag) {
         [weakSelf voiceBtnAction];
     }];
-    [self.inputBottomView addSubview:voiceButton];
+    [self.inputBottomView addSubview:voiceBackView];
     //命令输入框
     UITextField * OrderTextField = [[UITextField alloc] initWithFrame:CGRectMake(voiceButton.right+5, 5, kScreenW-voiceButton.width-10 , 40)];
     OrderTextField.layer.cornerRadius = 5;
@@ -96,7 +99,8 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
     OrderModel * model = [[OrderModel alloc] init];
     model.timestamp = [[NSDate new] timeIntervalSince1970];
     model.content = [NSString stringWithString:self.msgTextField.text];
-    
+    model.isSelf =  (indexMsg%2 == 0) ? YES:NO;
+    indexMsg++;
     [self.dataArray addObject:model];
     
     self.msgTextField.text = nil;
@@ -168,7 +172,11 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    OrderModel * model = [_dataArray objectAtIndex:indexPath.row];
+    CGSize msgSize = [model.content sizeWithFont:[UIFont systemFontOfSize:15]];
+    NSInteger line = msgSize.width / (kScreenW-20-IMAHE_WIDTH*2-15) + 1;
+    NSLog(@"msgSize:[%f %f],line:%ld",msgSize.width,msgSize.height,(long)line);
+    return line * msgSize.height + 15;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -176,7 +184,7 @@ static NSString *const msgreuseIdentifier = @"msgUITableViewCellIdentifier";
     OrderTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:msgreuseIdentifier ];
 
     if (cell == nil) {
-        cell = [[OrderTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:msgreuseIdentifier];
+        cell = [[OrderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:msgreuseIdentifier];
     }
     [cell setDataWithModel:[self.dataArray objectAtIndex:indexPath.row]];
     return cell;

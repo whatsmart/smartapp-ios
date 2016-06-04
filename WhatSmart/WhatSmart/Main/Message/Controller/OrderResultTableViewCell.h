@@ -1,19 +1,15 @@
 //
-//  OrderTableViewCell.h
+//  OrderResultTableViewCell.h
 //  WhatSmart
 //
-//  Created by 董力云 on 16/5/28.
+//  Created by 董力云 on 16/6/4.
 //  Copyright © 2016年 董力云. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "OrderModel.h"
 
-#define IMAHE_WIDTH  30
-
-
-@interface OrderTableViewCell : UITableViewCell
-
+@interface OrderResultTableViewCell : UITableViewCell
 -(void) setDataWithModel:(OrderModel*) model;
 
 @end

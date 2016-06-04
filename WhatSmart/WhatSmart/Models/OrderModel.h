@@ -12,6 +12,7 @@
 
 @property (assign, nonatomic) long long timestamp;
 @property (strong, nonatomic) NSString * content;
+@property (assign, nonatomic) BOOL isSelf;
 
 -(OrderModel*) initWithDic:(NSDictionary*) dic;
 @end
