@@ -61,6 +61,21 @@
     }];
 }
 
+- (void) SetDeviceInfoWithId:(NSString*) Id andInfo:(NSDictionary*)info Completion:(void(^)(BOOL isSuccess, DeviceModel *model))completion
+{
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL DeviceWithId],Id ];
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
+    DLog(@"设置设备信息......");
+    DLog(@"参数:%@",info);
+    [client invokeMethod:@"set_info" withParameters:info requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(YES,nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"错误：设置设备信息!错误信息：%@",error);
+        completion(NO,nil);
+    }];
+}
+
+
 - (void) SetNameWithId:(NSString*) Id andName:(NSString*) name Completion:(void(^)(BOOL isSuccess, NSError * error)) completion
 {
     NSString * urlString = [[NSString alloc] initWithFormat:[WSURL DeviceWithId],Id ];
@@ -86,6 +101,42 @@
         completion(NO,error);
     }];
 }
+
+//控制
+- (void) GetControlStateWithId:(NSString*) Id andState:(NSArray*)stateName Completion:(void(^)(BOOL isSuccess,NSString * des))completion
+{
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
+    DLog(@"请求设备状态......");
+    [client invokeMethod:@"get_state" withParameters:stateName requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if ([[responseObject objectForKey:@"result"] isKindOfClass:[NSDictionary class]]) {
+            NSDictionary * result = [responseObject objectForKey:@"result"];
+            DeviceModel * model = [[DeviceModel alloc] initWithDic:result];
+            completion(YES,nil);
+        }else{
+            completion(NO,nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"错误：请求设备状态!错误信息：%@",error);
+        completion(NO,nil);
+    }];
+}
+
+- (void) SetControlStateWithId:(NSString*) Id andState:(NSDictionary*)state Completion:(void(^)(BOOL isSuccess, NSString * des))completion
+{
+    NSString * urlString = [[NSString alloc] initWithFormat:[WSURL ControlWithId],Id ];
+    AFJSONRPCClient * client = [AFJSONRPCClient clientWithEndpointURL:[NSURL URLWithString:urlString]];
+    DLog(@"设置设备状态......");
+    DLog(@"参数:%@",state);
+    [client invokeMethod:@"set_state" withParameters:state requestId:@(1) success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(YES,nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"错误：设置设备状态!错误信息：%@",error);
+        completion(NO,[error.userInfo objectForKey:@"NSLocalizedDescription"]);
+    }];
+}
+
 
 - (void) PowerOnWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess, NSError * error)) completion
 {

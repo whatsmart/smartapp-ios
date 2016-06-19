@@ -33,6 +33,11 @@
 
 - (void) GetDeviceList;
 - (void) GetDeviceWithId:(NSString*) Id Completion:(void(^)(BOOL isSuccess, DeviceModel * model))completion;
+- (void) SetDeviceInfoWithId:(NSString*) Id andInfo:(NSDictionary*)info Completion:(void(^)(BOOL isSuccess, DeviceModel *model))completion;
+
+- (void) GetControlStateWithId:(NSString*) Id andState:(NSArray*)stateName Completion:(void(^)(BOOL isSuccess,NSString * des))completion;
+- (void) SetControlStateWithId:(NSString*) Id andState:(NSDictionary*)state Completion:(void(^)(BOOL isSuccess, NSString * des))completion;
+
 //????????????????? 返回值？
 - (void) DiscoverDeviceWithType:(NSString*) type Completion:(void(^)(BOOL isSuccess, DeviceModel * model))completion;
 - (void) SetNameWithId:(NSString*) Id andName:(NSString*) name Completion:(void(^)(BOOL isSuccess, NSError * error)) completion;

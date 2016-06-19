@@ -35,6 +35,8 @@
         [[WSDataCenter shareDataCenter] GetDeviceList];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
+    
+    _colorArr = [NSArray arrayWithObjects:@(0xFF0000),@(0xFF6100),@(0xFFFF00),@(0x00FF00),@(0x00FFFF),@(0x0000FF),@(0xA020F0), nil];
 }
 
 - (void)didReceiveMemoryWarning {
