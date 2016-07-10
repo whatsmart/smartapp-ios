@@ -13,13 +13,13 @@
 
 -(void) createLightSettingViewWithModel:(DeviceModel*)model
 {
-    _lightSetView = [[UIView alloc] initWithFrame:kScreenFrame];
+    _lightSetView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, kScreenH)];
     [_lightSetView setBackgroundColor:UIColorFromHexA(0x0, .8)];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(p_tap:)];
     tap.cancelsTouchesInView = YES;
     [_lightSetView addGestureRecognizer:tap];
     
-    UIView * backView = [[UIView alloc] initWithFrame:CGRectMake(30, 200, kScreenW-60, 380)];
+    UIView * backView = [[UIView alloc] initWithFrame:CGRectMake(30, 150, kScreenW-60, 340)];
     [backView.layer setCornerRadius:5];
     [backView setBackgroundColor:[UIColor whiteColor]];
     UITapGestureRecognizer * tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(p_tapTop:)];

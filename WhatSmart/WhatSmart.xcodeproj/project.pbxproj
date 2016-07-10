@@ -1009,7 +1009,7 @@
 				TargetAttributes = {
 					9D90EEED1CA287B100D79769 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = R7JK4K8BX9;
+						DevelopmentTeam = RUG9MAF6NM;
 					};
 				};
 			};
@@ -1316,7 +1316,7 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/WhatSmart/Main";
 				INFOPLIST_FILE = WhatSmart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whatsmart.smartappdly;
+				PRODUCT_BUNDLE_IDENTIFIER = org.whatsmart.smartapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1333,7 +1333,7 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/WhatSmart/Main";
 				INFOPLIST_FILE = WhatSmart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whatsmart.smartappdly;
+				PRODUCT_BUNDLE_IDENTIFIER = org.whatsmart.smartapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
